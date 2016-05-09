@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="content" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <p class="post-meta">
+            {% if page.author %}
+                {% assign author = site.data.authors[page.author] %}
+                <a class="author-name" href="{{author.url}}">{{author.name}}</a>
+                <span class="header-desc"> {{author.intro}} | </span>
+            {% endif %}
+            <time class="header-desc" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ page.date | date: "%b %-d, %Y" }}
+            </time>
+        </p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+    {% include duoshuo.html %}
+</article>
+
