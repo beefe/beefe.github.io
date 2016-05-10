@@ -2,8 +2,8 @@
 layout: post
 title: Jekyll Basic Usage
 author: xszhi
-categories: tech_note
-tag: Jekyll
+categories: tech-note
+tags: [jekyll, liquid, YAML]
 ---
 Jekyll是一款广受好评的静态博客系统，主要基于Ruby构建，某些功能也需要nodejs与python辅助。因为本博客系统也是基于Jekyll搭建的，就着刚学习搭建完成，写一篇博客总结一下Jekyll的具体使用。如果想要更系统地进行学习，请参考[官方文档](https://jekyllrb.com/docs/)
 

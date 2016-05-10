@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React Native platform difference"
-categories: RN components
+categories: web-components
 author: xwenliang
 ---
 

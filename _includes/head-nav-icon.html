@@ -7,17 +7,10 @@
         </svg>
     </a>
     <ul>
+    {% for category in site.data.categories %}
         <li>
-            <a href="/#components">Components</a>
+            <a href="/#{{category.id}}">{{ category.name }}</a>
         </li>
-        <li>
-            <a href="/#devtools">Dev Tools</a>
-        </li>
-        <li>
-            <a href="/#sdk">IOS SDK</a>
-        </li>
-        <li>
-            <a href="/#blog-readme">readme</a>
-        </li>
+    {% endfor %}
     </ul>
 </div>

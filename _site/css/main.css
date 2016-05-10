@@ -114,18 +114,6 @@ section:nth-child(2n) {
   text-align: center;
   width: 100%; }
 
-#logo {
-  margin: 170px auto 10px;
-  width: 150px;
-  height: 250px; }
-
-.logo-desc {
-  margin-top: 0;
-  margin-bottom: 230px;
-  text-align: center;
-  color: #898989;
-  font-size: 13px; }
-
 #tagline {
   font-size: 16px; }
 
@@ -145,9 +133,9 @@ section:nth-child(2n) {
   position: absolute;
   top: 0;
   right: 0;
-  width: 25px;
-  height: 25px;
-  padding: 3px 4px 0 4px;
+  width: 27px;
+  height: 27px;
+  padding: 2px 6px 0 6px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 2px;
   border: 1px solid transparent;
@@ -162,6 +150,7 @@ section:nth-child(2n) {
   position: absolute;
   top: 24px;
   right: 0;
+  width: 120px;
   margin: 0;
   border: 1px solid #efefef;
   border-bottom: 1px solid #ddd;
@@ -169,6 +158,9 @@ section:nth-child(2n) {
   padding: 20px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 1px 3px 0 #eee; }
+  @media screen and (max-width: 500px) {
+    #menu ul {
+      width: 100px; } }
 
 #menu ul li {
   list-style: none; }
@@ -212,3 +204,33 @@ section:nth-child(2n) {
   vertical-align: middle; }
   .icon > svg path {
     fill: #828282; }
+
+/**
+ * Site header
+ */
+#view-git {
+  position: absolute;
+  top: 475px;
+  left: 50%;
+  transform: translateX(-50%); }
+  #view-git img {
+    width: 36px;
+    height: auto; }
+  @media screen and (max-width: 450px) {
+    #view-git {
+      top: 425px; } }
+
+#logo {
+  margin: 170px auto 10px;
+  width: 150px;
+  height: 250px; }
+  @media screen and (max-width: 450px) {
+    #logo {
+      margin-top: 120px; } }
+
+.logo-desc {
+  margin-top: 0;
+  margin-bottom: 230px;
+  text-align: center;
+  color: #898989;
+  font-size: 13px; }
