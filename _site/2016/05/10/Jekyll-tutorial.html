@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jekyll Basic Usage</title>
+    <meta name="description" content="Jekyll是一款广受好评的静态博客系统，主要基于Ruby构建，某些功能也需要nodejs与python辅助。因为本博客系统也是基于Jekyll搭建的，就着刚学习搭建完成，写一篇博客总结一下Jekyll的具体使用。如果想要更系统地进行学习，请参考官方文档">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://beefe.github.io//2016/05/10/Jekyll-tutorial.html">
+    <link rel="alternate" type="application/rss+xml" title="BeeFE" href="http://beefe.github.io//feed.xml">
+</head>
+
+
+<body>
+
+    <!-- <header class="site-header">
+
+  <div id="toggle">
+
+    <a class="site-title" href="/">BeeFE</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+ -->
+    <div id=menu>
+    <a id="toggle" href="#">
+        <svg viewBox="0 0 18 15">
+            <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+            <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+            <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+    </a>
+    <ul>
+        <li>
+            <a href="/#components">Components</a>
+        </li>
+        <li>
+            <a href="/#devtools">Dev Tools</a>
+        </li>
+        <li>
+            <a href="/#sdk">IOS SDK</a>
+        </li>
+        <li>
+            <a href="/#blog-readme">readme</a>
+        </li>
+    </ul>
+</div>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <article class="content" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Jekyll Basic Usage</h1>
+        <p class="post-meta">
+            
+                
+                <a class="author-name" href="http://skintest.github.io/">xszhi</a>
+                <span class="header-desc"> calm down | </span>
+            
+            <time class="header-desc" datetime="2016-05-10T00:00:00+08:00" itemprop="datePublished">
+                May 10, 2016
+            </time>
+        </p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        <p>Jekyll是一款广受好评的静态博客系统，主要基于Ruby构建，某些功能也需要nodejs与python辅助。因为本博客系统也是基于Jekyll搭建的，就着刚学习搭建完成，写一篇博客总结一下Jekyll的具体使用。如果想要更系统地进行学习，请参考<a href="https://jekyllrb.com/docs/">官方文档</a></p>
+
+<!-- more -->
+
+<h2 id="installation-and-quik-start">Installation and Quik-start</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~ <span class="nv">$ </span>gem install jekyll
+~ <span class="nv">$ </span>jekyll new myblog
+~ <span class="nv">$ </span><span class="nb">cd </span>myblog
+~/myblog <span class="nv">$ </span>jekyll serve
+<span class="c"># =&gt; Now browse to http://localhost:4000</span>
+</code></pre>
+</div>
+
+<p>jekyll 基于Ruby， 由 gem 安装，如果安装遇上问题搜索一下 gem 国内原，也可参考仓库的 <a href="https://github.com/beefe/beefe.github.io/blob/master/README.md">README 文档</a>。 安装后 Jekyll 可以在命令行中调用，代码第二行便是调用 jekyll 工具新建了一个博客目录，这个目录结构可以看作是 Jekyll 使用的基本目录结构，在此基础上博客便能正常运转；进一步编辑可以在<code class="highlighter-rouge">_post</code>目录下按照<a href="https://jekyllrb.com/docs/posts/">基本格式</a>添加内容，亦可对网站资源进行更为深入的定制。之后在相应的目录中调用 Jekyll 的调试服务器即可，jekyll <a href="https://jekyllrb.com/docs/usage/">命令行api</a>。</p>
+
+<h2 id="site-model">Site Model</h2>
+
+<p>作为一个只懂 H5, CSS 和 JS 的前端小白，使用 Jekyll 构建网站就必须得面对两个问题， YAML是个什么鬼 以及 全站的数据模型究竟是咋回事儿。顺道说一句，jekyll 是支持 JSON 和 CSV 的。撇开第一眼就看蒙逼的YAML</p>
+
+<h3 id="yaml">YAML</h3>
+
+<ul>
+  <li>YAML 是一种受到多种语言(python, ruby, c# …)广泛支持的数据格式，以小白的视点看基本就是和 JSON 一个意思，讲的牛逼一点，YAML是JSON的父集。</li>
+  <li>YAML Yet Another Markup Language, which is easy to write and easy to read</li>
+  <li>YAML is structured by indentation</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>健值对</li>
+</ul>
+
+<pre><code class="language-YAML">key: value
+</code></pre>
+
+<ul>
+  <li>基本数据结构</li>
+</ul>
+
+<pre><code class="language-YAML">a: 123                     # an integer
+b: "123"                   # a string, disambiguated by quotes
+c: 123.0                   # a float
+d: !!float 123             # also a float via explicit data type prefixed by (!!)
+e: !!str 123               # a string, disambiguated by explicit type
+f: !!str Yes               # a string via explicit type
+g: Yes                     # a boolean True (yaml1.1), string "Yes" (yaml1.2)
+h: Yes we have No bananas  # a string, "Yes" and "No" disambiguated by context.
+picture: !!binary |        # binary data
+  R0lGODdhDQAIAIAAAAAAANn
+  Z2SwAAAAADQAIAAACF4SDGQ
+  ar3xxbJ9p0qa7R0YxwzaFME
+  1IAADs=
+</code></pre>
+
+<ul>
+  <li>数组的 <em>行内</em> 与 <em>缩进</em> 表示</li>
+</ul>
+
+<pre><code class="language-YAML">men: [John Smith, Bill Jones]
+women:
+  - Mary Smith
+  - Susan Williams
+</code></pre>
+
+<ul>
+  <li>多行字符串的表示</li>
+</ul>
+
+<pre><code class="language-YAML">specialDelivery:  &gt;
+    Follow the Yellow Brick
+    Road to the Emerald City.
+street: |
+        123 Tornado Alley
+        Suite 16
+
+
+</code></pre>
+
+<ul>
+  <li>一个综合一点的例子</li>
+</ul>
+
+<pre><code class="language-YAML">receipt:     Oz-Ware Purchase Invoice
+date:        2012-08-06
+customer:
+    first_name:   Dorothy
+    family_name:  Gale
+
+items:
+    - part_no:   A4786
+      descrip:   Water Bucket (Filled)
+      price:     1.47
+      quantity:  4
+
+    - part_no:   E1628
+      descrip:   High Heeled "Ruby" Slippers
+      size:      8
+      price:     133.7
+      quantity:  1
+
+bill-to:  &amp;id001
+    street: |
+            123 Tornado Alley
+            Suite 16
+    city:   East Centerville
+    state:  KS
+
+ship-to:  *id001
+
+specialDelivery:  &gt;
+    Follow the Yellow Brick
+    Road to the Emerald City.
+    Pay no attention to the
+    man behind the curtain.
+</code></pre>
+
+<h3 id="front-matter">Front Matter</h3>
+<p>Font Matter，用官网的话说 ‘The front matter is where Jekyll starts to get really cool’。当一个文件头部有一块 YAML 内容时，这块内容会被 Jekyll 处理，同时该文件本身也变成了一个特殊文件，比如说 <code class="highlighter-rouge">_posts</code> 内的博客文件。举个例子，一并提一下相关的语法规范</p>
+
+<pre><code class="language-YAML">---
+layout: post
+title:  "Welcome to Jekyll!"
+date:   2016-05-06 11:20:45 +0800
+categories: jekyll
+---
+</code></pre>
+
+<ul>
+  <li>Front Matter 必须出现在文章头部，换言之从第一行开始就好了</li>
+  <li>Front Matter 被包裹在两道分割线内，这两道分割线必须是 [MUST] 三道杠 <code class="highlighter-rouge">---</code></li>
+  <li>Front Matter 内定义的数据可以在文件处理过程中通过 liquid 模版利用</li>
+  <li>对于全站通用的数据，可以在 <code class="highlighter-rouge">_data</code> 目录内定义，如作者；或是在 <code class="highlighter-rouge">_config.yml</code> 内配置。</li>
+</ul>
+
+<h3 id="call-data">Call Data</h3>
+
+<p>数据的调用需要熟悉两方面内容</p>
+
+<ul>
+  <li><a href="https://help.shopify.com/themes/liquid/basics">liquid</a> 模版语法，以及 Jekyll 对 liquid 的<a href="https://help.shopify.com/themes/liquid/basics">扩张</a></li>
+  <li>挂载数据的<a href="https://jekyllrb.com/docs/variables/">关键对象</a>及其api</li>
+</ul>
+
+
+    </div>
+
+    <!-- Duoshuo Comment BEGIN -->
+<a name="comments"> </a>
+<div id="comment">
+    <div class="ds-thread" data-urt="http://fex.baidu.com/2016/05/10/Jekyll-tutorial" data-title="Jekyll Basic Usage" data-thread-key="/2016/05/10/Jekyll-tutorial"></div>
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"fex"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+</div>
+<!-- Duoshuo Comment END -->
+
+</article>
+
+
+        </div>
+    </div>
+
+    <footer id="bottom">
+    <!-- <div class="content">
+        <p>A little better from Web Front End.
+</p>
+    </div> -->
+</footer>
+
+<script src="/scripts/zepto.min.js"></script>
+
+
+</body>
+
+</html>
