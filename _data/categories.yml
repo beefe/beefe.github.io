@@ -1,6 +1,7 @@
 - tech_note:
   name: "技术笔记"
   id: "tech-note"
+
 - web_components:
   name: "组件开发"
   id: "web-components"
