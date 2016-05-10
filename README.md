@@ -1,6 +1,6 @@
 ## 这什么？
 
-这是 BeeFE 团队公共博客的源码，将文章提交到这里后就会在 <http://http://beefe.github.io> 上展现。
+这是 BeeFE 团队公共博客的源码，将文章提交到这里后就会在 <http://beefe.github.io> 上展现。
 
 
 ## 环境搭建
