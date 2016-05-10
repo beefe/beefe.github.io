@@ -6,35 +6,516 @@
 </description>
     <link>http://beefe.github.io//</link>
     <atom:link href="http://beefe.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 May 2016 17:24:29 +0800</pubDate>
-    <lastBuildDate>Mon, 09 May 2016 17:24:29 +0800</lastBuildDate>
+    <pubDate>Tue, 10 May 2016 15:46:12 +0800</pubDate>
+    <lastBuildDate>Tue, 10 May 2016 15:46:12 +0800</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Jekyll Basic Usage</title>
+        <description>&lt;p&gt;Jekyll是一款广受好评的静态博客系统，主要基于Ruby构建，某些功能也需要nodejs与python辅助。因为本博客系统也是基于Jekyll搭建的，就着刚学习搭建完成，写一篇博客总结一下Jekyll的具体使用。如果想要更系统地进行学习，请参考&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;!-- more --&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;h2 id=&quot;installation-and-quik-start&quot;&gt;Installation and Quik-start&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll
+~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new myblog
+~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;myblog
+~/myblog &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve
+&lt;span class=&quot;c&quot;&gt;# =&amp;gt; Now browse to http://localhost:4000&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;jekyll 基于Ruby， 由 gem 安装，如果安装遇上问题搜索一下 gem 国内原，也可参考仓库的 &lt;a href=&quot;https://github.com/beefe/beefe.github.io/blob/master/README.md&quot;&gt;README 文档&lt;/a&gt;。 安装后 Jekyll 可以在命令行中调用，代码第二行便是调用 jekyll 工具新建了一个博客目录，这个目录结构可以看作是 Jekyll 使用的基本目录结构，在此基础上博客便能正常运转；进一步编辑可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;_post&lt;/code&gt;目录下按照&lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot;&gt;基本格式&lt;/a&gt;添加内容，亦可对网站资源进行更为深入的定制。之后在相应的目录中调用 Jekyll 的调试服务器即可，jekyll &lt;a href=&quot;https://jekyllrb.com/docs/usage/&quot;&gt;命令行api&lt;/a&gt;。&lt;/p&gt;
 
+&lt;h2 id=&quot;site-model&quot;&gt;Site Model&lt;/h2&gt;
+
+&lt;p&gt;作为一个只懂 H5, CSS 和 JS 的前端小白，使用 Jekyll 构建网站就必须得面对两个问题， YAML是个什么鬼 以及 全站的数据模型究竟是咋回事儿。顺道说一句，jekyll 是支持 JSON 和 CSV 的。&lt;/p&gt;
+
+&lt;h3 id=&quot;yaml&quot;&gt;YAML&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;YAML 是一种受到多种语言(python, ruby, c# …)广泛支持的数据格式，以小白的视点看基本就是和 JSON 一个意思，讲的牛逼一点，YAML是JSON的父集。&lt;/li&gt;
+  &lt;li&gt;YAML Yet Another Markup Language, which is easy to write and easy to read&lt;/li&gt;
+  &lt;li&gt;YAML is structured by indentation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;健值对&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;key: value
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基本数据结构&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;a: 123                     # an integer
+b: &quot;123&quot;                   # a string, disambiguated by quotes
+c: 123.0                   # a float
+d: !!float 123             # also a float via explicit data type prefixed by (!!)
+e: !!str 123               # a string, disambiguated by explicit type
+f: !!str Yes               # a string via explicit type
+g: Yes                     # a boolean True (yaml1.1), string &quot;Yes&quot; (yaml1.2)
+h: Yes we have No bananas  # a string, &quot;Yes&quot; and &quot;No&quot; disambiguated by context.
+picture: !!binary |        # binary data
+  R0lGODdhDQAIAIAAAAAAANn
+  Z2SwAAAAADQAIAAACF4SDGQ
+  ar3xxbJ9p0qa7R0YxwzaFME
+  1IAADs=
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数组的 &lt;em&gt;行内&lt;/em&gt; 与 &lt;em&gt;缩进&lt;/em&gt; 表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;men: [John Smith, Bill Jones]
+women:
+  - Mary Smith
+  - Susan Williams
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;多行字符串的表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;specialDelivery:  &amp;gt;
+    Follow the Yellow Brick
+    Road to the Emerald City.
+street: |
+        123 Tornado Alley
+        Suite 16
+
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一个综合一点的例子&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;receipt:     Oz-Ware Purchase Invoice
+date:        2012-08-06
+customer:
+    first_name:   Dorothy
+    family_name:  Gale
+
+items:
+    - part_no:   A4786
+      descrip:   Water Bucket (Filled)
+      price:     1.47
+      quantity:  4
+
+    - part_no:   E1628
+      descrip:   High Heeled &quot;Ruby&quot; Slippers
+      size:      8
+      price:     133.7
+      quantity:  1
+
+bill-to:  &amp;amp;id001
+    street: |
+            123 Tornado Alley
+            Suite 16
+    city:   East Centerville
+    state:  KS
+
+ship-to:  *id001
+
+specialDelivery:  &amp;gt;
+    Follow the Yellow Brick
+    Road to the Emerald City.
+    Pay no attention to the
+    man behind the curtain.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;front-matter&quot;&gt;Front Matter&lt;/h3&gt;
+&lt;p&gt;Font Matter，用官网的话说 ‘The front matter is where Jekyll starts to get really cool’。当一个文件头部有一块 YAML 内容时，这块内容会被 Jekyll 处理，同时该文件本身也变成了一个特殊文件，比如说 &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 内的博客文件。需要注意的有两方面内容，&lt;em&gt;第一&lt;/em&gt; Front Matter 的格式规范；&lt;em&gt;第二&lt;/em&gt; 常用变量的作用与文档查询&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Front Matter 必须出现在文章头部，换言之从第一行开始就好了&lt;/li&gt;
+  &lt;li&gt;Front Matter 被包裹在两行分割线内，这两道分割线必须是 [MUST] 三道杠 &lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Front Matter 内定义的数据可以在文件处理过程中通过 liquid 模版利用&lt;/li&gt;
+  &lt;li&gt;对于全站通用的数据，可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_data&lt;/code&gt; 目录内定义，如作者；或是在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 内配置。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;---
+layout: post
+title: Jekyll Basic Usage
+author: xszhi
+categories: tech_note
+tag: Jekyll
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看变量时注意三方面内容。&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;目录结构有没有对应名称&lt;/li&gt;
+      &lt;li&gt;相应模版中有没有调用&lt;/li&gt;
+      &lt;li&gt;是否为 Jekyll 预定义&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;以下简单分析本例，, 更细致的使用见下一个章节。&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;layout: post&lt;/code&gt; 表示在渲染时使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;_layout&lt;/code&gt; 目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;post.html&lt;/code&gt; 模版&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title: Jekyll Basic Usage&lt;/code&gt; 数据通过模版&lt;code class=&quot;highlighter-rouge&quot;&gt;post.html&lt;/code&gt;渲染时候的 &lt;code class=&quot;highlighter-rouge&quot;&gt;page.title&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;author: xszhi&lt;/code&gt; 渲染时的 &lt;code class=&quot;highlighter-rouge&quot;&gt;page.author&lt;/code&gt;， 同时用于调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;site.data.authors.xszhi&lt;/code&gt;， 请查看文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;/_data/authors&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;最后两行均是为了对文章内容进行进一步细分而设定的自定义数据&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;call-data&quot;&gt;Call Data&lt;/h3&gt;
+
+&lt;p&gt;数据的调用需要熟悉两方面内容&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.shopify.com/themes/liquid/basics&quot;&gt;liquid&lt;/a&gt; 模版语法，以及 Jekyll 对 liquid 的&lt;a href=&quot;https://help.shopify.com/themes/liquid/basics&quot;&gt;扩张&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;挂载数据的&lt;a href=&quot;https://jekyllrb.com/docs/variables/&quot;&gt;关键对象&lt;/a&gt;及其api&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;下图是想说明 Jekyll 的官方文档已经很详略得当了，建议大家过一遍 Variables, Templates 以及 Configuration这三个部分(我想测下图片是否能够正常显示)，&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/img/2016-05-10-jekyll-tutorial/global_variables.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Liquid 要点&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;核心概念有三个 Tag, Object, Filter
+    &lt;ol&gt;
+      &lt;li&gt;Tag 完成流控制&lt;/li&gt;
+      &lt;li&gt;Objects 用于渲染内容&lt;/li&gt;
+      &lt;li&gt;Filter 用于修改，调整数据&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- TAG --&amp;gt;&lt;/span&gt;
+{% if user.name == &#39;elvis&#39; %}
+  Hey Elvis
+{% endif %}
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Objects --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;{{ page.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- output  --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt; Jekyll Basic Usage &lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Filters --&amp;gt;&lt;/span&gt;
+{{ &#39;sales&#39; | append: &#39;.jpg&#39; }}
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Output: sales.jpg --&amp;gt;&lt;/span&gt;
+
+{% end raw %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.shopify.com/themes/liquid/basics/operators&quot;&gt;操作符&lt;/a&gt;只包括逻辑和比较操作符&lt;/li&gt;
+  &lt;li&gt;Data Type 注意 Nil 和 EmptyDrop
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;my_string&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;/code&gt;  给变量赋值一个 str&lt;/li&gt;
+      &lt;li&gt;对于 Nil，需要注意的是，其被转换为 false&lt;/li&gt;
+      &lt;li&gt;Array的遍历操作&lt;/li&gt;
+      &lt;li&gt;关于真假 在 liquid 内除了 nil 和 false 其它值均为真&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;以下是一些简单的例子，进一步熟悉可浏览 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new &amp;lt;name&amp;gt;&lt;/code&gt; 生成的代码,更多内容请参考&lt;a href=&quot;https://help.shopify.com/themes/liquid/basics&quot;&gt;官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;!--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Nil&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;--&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fulfillment.tracking_numbers&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;There&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;tracking&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;number.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;!--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;--&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;product.tags&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endfor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;!--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;--&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;unless&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;settings.fp_heading&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;blank&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;settings.fp_heading&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&amp;lt;/h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endunless&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对于全站需要使用的配置信息可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;config.yml&lt;/code&gt; 中编辑，需要指出的是，config.yml 内容的修改并不会出发 jekyll 测试服务器的刷新。&lt;/li&gt;
+  &lt;li&gt;页面的创建只是对模版渲染以及网站数据结构的综合运用。&lt;/li&gt;
+  &lt;li&gt;关于样式，Jekyll 默认支持 sass。但是没有 sourcemap， 并不是特别爽，暂时还不知如何要爽由自己，有解决方式的同学，希望能够不吝赐教。&lt;/li&gt;
+  &lt;li&gt;结合 Github 的发布是很容易的，个人或是组织，建立&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;name&amp;gt;.github.io&lt;/code&gt; 仓库（代码需要储存于master分支）， 项目建立 &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-page&lt;/code&gt;分支，上传代码即可。&lt;/li&gt;
+  &lt;li&gt;评论功能的引入，建议使用百度的&lt;a href=&quot;http://dev.duoshuo.com/docs&quot;&gt;多说&lt;/a&gt;，简单快捷。当然 disquss 这样的库也是存在的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;欢迎留言，转载，吐槽。&lt;/p&gt;
 </description>
-        <pubDate>Fri, 06 May 2016 11:20:45 +0800</pubDate>
-        <link>http://beefe.github.io//jekyll/update/2016/05/06/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://beefe.github.io//jekyll/update/2016/05/06/welcome-to-jekyll.html</guid>
+        <pubDate>Tue, 10 May 2016 00:00:00 +0800</pubDate>
+        <link>http://beefe.github.io//tech_note/2016/05/10/Jekyll-tutorial.html</link>
+        <guid isPermaLink="true">http://beefe.github.io//tech_note/2016/05/10/Jekyll-tutorial.html</guid>
+        
+        <category>Jekyll</category>
         
         
-        <category>jekyll</category>
+        <category>tech_note</category>
         
-        <category>update</category>
+      </item>
+    
+      <item>
+        <title>Jekyll Basic Usage</title>
+        <description>&lt;p&gt;Jekyll是一款广受好评的静态博客系统，主要基于Ruby构建，某些功能也需要nodejs与python辅助。因为本博客系统也是基于Jekyll搭建的，就着刚学习搭建完成，写一篇博客总结一下Jekyll的具体使用。如果想要更系统地进行学习，请参考&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2 id=&quot;installation-and-quik-start&quot;&gt;Installation and Quik-start&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll
+~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new myblog
+~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;myblog
+~/myblog &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve
+&lt;span class=&quot;c&quot;&gt;# =&amp;gt; Now browse to http://localhost:4000&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;jekyll 基于Ruby， 由 gem 安装，如果安装遇上问题搜索一下 gem 国内原，也可参考仓库的 &lt;a href=&quot;https://github.com/beefe/beefe.github.io/blob/master/README.md&quot;&gt;README 文档&lt;/a&gt;。 安装后 Jekyll 可以在命令行中调用，代码第二行便是调用 jekyll 工具新建了一个博客目录，这个目录结构可以看作是 Jekyll 使用的基本目录结构，在此基础上博客便能正常运转；进一步编辑可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;_post&lt;/code&gt;目录下按照&lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot;&gt;基本格式&lt;/a&gt;添加内容，亦可对网站资源进行更为深入的定制。之后在相应的目录中调用 Jekyll 的调试服务器即可，jekyll &lt;a href=&quot;https://jekyllrb.com/docs/usage/&quot;&gt;命令行api&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;site-model&quot;&gt;Site Model&lt;/h2&gt;
+
+&lt;p&gt;作为一个只懂 H5, CSS 和 JS 的前端小白，使用 Jekyll 构建网站就必须得面对两个问题， YAML是个什么鬼 以及 全站的数据模型究竟是咋回事儿。顺道说一句，jekyll 是支持 JSON 和 CSV 的。撇开第一眼就看蒙逼的YAML&lt;/p&gt;
+
+&lt;h3 id=&quot;yaml&quot;&gt;YAML&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;YAML 是一种受到多种语言(python, ruby, c# …)广泛支持的数据格式，以小白的视点看基本就是和 JSON 一个意思，讲的牛逼一点，YAML是JSON的父集。&lt;/li&gt;
+  &lt;li&gt;YAML Yet Another Markup Language, which is easy to write and easy to read&lt;/li&gt;
+  &lt;li&gt;YAML is structured by indentation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;健值对&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;key: value
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基本数据结构&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;a: 123                     # an integer
+b: &quot;123&quot;                   # a string, disambiguated by quotes
+c: 123.0                   # a float
+d: !!float 123             # also a float via explicit data type prefixed by (!!)
+e: !!str 123               # a string, disambiguated by explicit type
+f: !!str Yes               # a string via explicit type
+g: Yes                     # a boolean True (yaml1.1), string &quot;Yes&quot; (yaml1.2)
+h: Yes we have No bananas  # a string, &quot;Yes&quot; and &quot;No&quot; disambiguated by context.
+picture: !!binary |        # binary data
+  R0lGODdhDQAIAIAAAAAAANn
+  Z2SwAAAAADQAIAAACF4SDGQ
+  ar3xxbJ9p0qa7R0YxwzaFME
+  1IAADs=
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数组的 &lt;em&gt;行内&lt;/em&gt; 与 &lt;em&gt;缩进&lt;/em&gt; 表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;men: [John Smith, Bill Jones]
+women:
+  - Mary Smith
+  - Susan Williams
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;多行字符串的表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;specialDelivery:  &amp;gt;
+    Follow the Yellow Brick
+    Road to the Emerald City.
+street: |
+        123 Tornado Alley
+        Suite 16
+
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一个综合一点的例子&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;receipt:     Oz-Ware Purchase Invoice
+date:        2012-08-06
+customer:
+    first_name:   Dorothy
+    family_name:  Gale
+
+items:
+    - part_no:   A4786
+      descrip:   Water Bucket (Filled)
+      price:     1.47
+      quantity:  4
+
+    - part_no:   E1628
+      descrip:   High Heeled &quot;Ruby&quot; Slippers
+      size:      8
+      price:     133.7
+      quantity:  1
+
+bill-to:  &amp;amp;id001
+    street: |
+            123 Tornado Alley
+            Suite 16
+    city:   East Centerville
+    state:  KS
+
+ship-to:  *id001
+
+specialDelivery:  &amp;gt;
+    Follow the Yellow Brick
+    Road to the Emerald City.
+    Pay no attention to the
+    man behind the curtain.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;front-matter&quot;&gt;Front Matter&lt;/h3&gt;
+&lt;p&gt;Font Matter，用官网的话说 ‘The front matter is where Jekyll starts to get really cool’。当一个文件头部有一块 YAML 内容时，这块内容会被 Jekyll 处理，同时该文件本身也变成了一个特殊文件，比如说 &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 内的博客文件。需要注意的有两方面内容，&lt;em&gt;第一&lt;/em&gt; Front Matter 的格式规范；&lt;em&gt;第二&lt;/em&gt; 常用变量的作用与文档查询&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Front Matter 必须出现在文章头部，换言之从第一行开始就好了&lt;/li&gt;
+  &lt;li&gt;Front Matter 被包裹在两行分割线内，这两道分割线必须是 [MUST] 三道杠 &lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Front Matter 内定义的数据可以在文件处理过程中通过 liquid 模版利用&lt;/li&gt;
+  &lt;li&gt;对于全站通用的数据，可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_data&lt;/code&gt; 目录内定义，如作者；或是在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 内配置。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;---
+layout: post
+title: Jekyll Basic Usage
+author: xszhi
+categories: tech_note
+tag: Jekyll
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看变量时注意三方面内容。&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;目录结构有没有对应名称&lt;/li&gt;
+      &lt;li&gt;相应模版中有没有调用&lt;/li&gt;
+      &lt;li&gt;是否为 Jekyll 预定义&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;以下简单分析本例，, 更细致的使用见下一个章节。&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;layout: post&lt;/code&gt; 表示在渲染时使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;_layout&lt;/code&gt; 目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;post.html&lt;/code&gt; 模版&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title: Jekyll Basic Usage&lt;/code&gt; 数据通过模版&lt;code class=&quot;highlighter-rouge&quot;&gt;post.html&lt;/code&gt;渲染时候的 &lt;code class=&quot;highlighter-rouge&quot;&gt;page.title&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;author: xszhi&lt;/code&gt; 渲染时的 &lt;code class=&quot;highlighter-rouge&quot;&gt;page.author&lt;/code&gt;， 同时用于调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;site.data.authors.xszhi&lt;/code&gt;， 请查看文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;/_data/authors&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;最后两行均是为了对文章内容进行进一步细分而设定的自定义数据&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;call-data&quot;&gt;Call Data&lt;/h3&gt;
+
+&lt;p&gt;数据的调用需要熟悉两方面内容&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.shopify.com/themes/liquid/basics&quot;&gt;liquid&lt;/a&gt; 模版语法，以及 Jekyll 对 liquid 的&lt;a href=&quot;https://help.shopify.com/themes/liquid/basics&quot;&gt;扩张&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;挂载数据的&lt;a href=&quot;https://jekyllrb.com/docs/variables/&quot;&gt;关键对象&lt;/a&gt;及其api&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;下图是想说明 Jekyll 的官方文档已经很详略得当了，建议大家过一遍 Variables, Templates 以及 Configuration这三个部分(我想测下图片是否能够正常显示)，&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/img/2016-05-10-jekyll-tutorial/global_variables.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Liquid 要点&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;核心概念有三个 Tag, Object, Filter
+    &lt;ol&gt;
+      &lt;li&gt;Tag 完成流控制&lt;/li&gt;
+      &lt;li&gt;Objects 用于渲染内容&lt;/li&gt;
+      &lt;li&gt;Filter 用于修改，调整数据&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- TAG --&amp;gt;&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Objects --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Jekyll Basic Usage&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- output  --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt; Jekyll Basic Usage &lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Filters --&amp;gt;&lt;/span&gt;
+sales.jpg
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Output: sales.jpg --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.shopify.com/themes/liquid/basics/operators&quot;&gt;操作符&lt;/a&gt;只包括逻辑和比较操作符&lt;/li&gt;
+  &lt;li&gt;Data Type 注意 Nil 和 EmptyDrop
+    &lt;ol&gt;
+      &lt;li&gt;``  给变量赋值一个 str&lt;/li&gt;
+      &lt;li&gt;对于 Nil，需要注意的是，其被转换为 false&lt;/li&gt;
+      &lt;li&gt;Array的遍历操作&lt;/li&gt;
+      &lt;li&gt;关于真假 在 liquid 内除了 nil 和 false 其它值均为真&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;以下是一些简单的例子，进一步熟悉可浏览 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new &amp;lt;name&amp;gt;&lt;/code&gt; 生成的代码,更多内容请参考&lt;a href=&quot;https://help.shopify.com/themes/liquid/basics&quot;&gt;官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Nil --&amp;gt;&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Array --&amp;gt;&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &#39;&#39; and false --&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+
+&lt;p&gt;对于全站需要使用的配置信息可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;config.yml&lt;/code&gt; 中编辑，需要指出的是，config.yml 内容的修改并不会出发 jekyll 测试服务器的刷新。
+页面的创建只是对模版渲染以及网站数据结构的综合运用。
+关于样式，Jekyll 默认支持 sass。但是没有 sourcemap， 并不是特别爽，暂时还不知如何要爽由自己，有解决方式的同学，希望能够不吝赐教。
+结合 Github 的发布是很容易的，个人或是组织，建立&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;name&amp;gt;.github.io&lt;/code&gt; 仓库（代码需要储存于master分支）， 项目建立 &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-page&lt;/code&gt;分支，上传代码即可。&lt;/p&gt;
+
+&lt;p&gt;欢迎留言，转载，吐槽。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 May 2016 00:00:00 +0800</pubDate>
+        <link>http://beefe.github.io//tech_note/2016/05/10/Jekyll-tutorial.html</link>
+        <guid isPermaLink="true">http://beefe.github.io//tech_note/2016/05/10/Jekyll-tutorial.html</guid>
+        
+        <category>Jekyll</category>
+        
+        
+        <category>tech_note</category>
         
       </item>
     
