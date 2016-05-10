@@ -25,7 +25,13 @@
 
 ### 本地预览
 
-完成 jekyll 的安装后，在源码目录运行如下命令，就能在 localhost:4000 中预览了：
+完成 jekyll 的安装后，从公共主页获取源代码
+
+```bash
+$ git clone https://github.com/beefe/beefe.github.io.git
+```
+
+进入该目录运行如下命令，就能在 localhost:4000 中预览了：
 
 ```bash
    $ jekyll serve
