@@ -6,7 +6,7 @@ categories: tech_note
 tag: Android
 ---
 
-当Android项目使用WebView去加载网页的时候，免不了要与JS进行一些交互，所以也就免不了会遇到的一些问题，
+当Android项目使用WebView去加载网页的时候，很多时候要与JS进行一些交互，所以就会遇到的一些问题，
 比如alert在WebView中弹不出来，比如JS调用Native方法报错，假如你也恰好遇到了这些问题，不妨看下我的解决方法，
 也许正好能帮上你的忙。
 
