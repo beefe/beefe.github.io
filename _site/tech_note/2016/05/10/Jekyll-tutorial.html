@@ -51,7 +51,7 @@
 
 </header>
  -->
-    <div id=menu>
+    <!-- <div id=menu>
     <a id="toggle" href="#">
         <svg viewBox="0 0 18 15">
             <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
@@ -65,9 +65,13 @@
             <a href="/#tech-note">技术笔记</a>
         </li>
     
+        <li>
+            <a href="/#web-components">组件开发</a>
+        </li>
+    
     </ul>
 </div>
-
+ -->
 
     <div class="page-content">
         <div class="wrapper">
@@ -78,7 +82,7 @@
         <p class="post-meta">
             
                 
-                <a class="author-name" href="http://skintest.github.io/">xszhi</a>
+                <a class="author-name" href="http://skintest.github.io/">skinTest</a>
                 <span class="header-desc"> calm down | </span>
             
             <time class="header-desc" datetime="2016-05-10T00:00:00+08:00" itemprop="datePublished">
@@ -94,7 +98,7 @@
 
 <h2 id="installation-and-quik-start">Installation and Quik-start</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>~ <span class="nv">$ </span>gem install jekyll
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>~ <span class="nv">$ </span>gem install jekyll
 ~ <span class="nv">$ </span>jekyll new myblog
 ~ <span class="nv">$ </span><span class="nb">cd </span>myblog
 ~/myblog <span class="nv">$ </span>jekyll serve
@@ -106,7 +110,7 @@
 
 <h2 id="site-model">Site Model</h2>
 
-<p>作为一个只懂 H5, CSS 和 JS 的前端小白，使用 Jekyll 构建网站就必须得面对两个问题， YAML是个什么鬼 以及 全站的数据模型究竟是咋回事儿。顺道说一句，jekyll 是支持 JSON 和 CSV 的。</p>
+<p>作为一个只懂 H5, CSS 和 JS 的前端小白，使用 Jekyll 构建网站就必须得面对两个问题， YAML是个什么鬼 以及 全站的数据模型究竟是咋回事儿。顺道说一句，jekyll 是支持 JSON 和 CSV 的。撇开第一眼就看蒙逼的YAML</p>
 
 <h3 id="yaml">YAML</h3>
 
@@ -273,22 +277,17 @@ tag: Jekyll
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-<span class="c">&lt;!-- TAG --&gt;</span>
-{% if user.name == 'elvis' %}
-  Hey Elvis
-{% endif %}
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- TAG --&gt;</span>
+
 
 <span class="c">&lt;!-- Objects --&gt;</span>
-<span class="nt">&lt;p&gt;</span>{{ page.title }}<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Jekyll Basic Usage<span class="nt">&lt;/p&gt;</span>
 <span class="c">&lt;!-- output  --&gt;</span>
 <span class="nt">&lt;p&gt;</span> Jekyll Basic Usage <span class="nt">&lt;/p&gt;</span>
 
 <span class="c">&lt;!-- Filters --&gt;</span>
-{{ 'sales' | append: '.jpg' }}
+sales.jpg
 <span class="c">&lt;!-- Output: sales.jpg --&gt;</span>
-
-{% end raw %}
 </code></pre>
 </div>
 
@@ -296,7 +295,7 @@ tag: Jekyll
   <li><a href="https://help.shopify.com/themes/liquid/basics/operators">操作符</a>只包括逻辑和比较操作符</li>
   <li>Data Type 注意 Nil 和 EmptyDrop
     <ol>
-      <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">my_string</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"Hello World!"</span><span class="w"> </span><span class="err">%}</span></code>  给变量赋值一个 str</li>
+      <li>``  给变量赋值一个 str</li>
       <li>对于 Nil，需要注意的是，其被转换为 false</li>
       <li>Array的遍历操作</li>
       <li>关于真假 在 liquid 内除了 nil 和 false 其它值均为真</li>
@@ -305,35 +304,25 @@ tag: Jekyll
   <li>以下是一些简单的例子，进一步熟悉可浏览 <code class="highlighter-rouge">jekyll new &lt;name&gt;</code> 生成的代码,更多内容请参考<a href="https://help.shopify.com/themes/liquid/basics">官方文档</a></li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">raw</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="err">&lt;!--</span><span class="w"> </span><span class="err">Nil</span><span class="w"> </span><span class="err">--&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">fulfillment.tracking_numbers</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-    </span><span class="err">There</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">tracking</span><span class="w"> </span><span class="err">number.</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-
-</span><span class="err">&lt;!--</span><span class="w"> </span><span class="err">Array</span><span class="w"> </span><span class="err">--&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">tag</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">product.tags</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-    </span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">tag</span><span class="w"> </span><span class="p">}</span><span class="err">}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-
-</span><span class="err">&lt;!--</span><span class="w"> </span><span class="err">''</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">--&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">unless</span><span class="w"> </span><span class="err">settings.fp_heading</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">blank</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-    </span><span class="err">&lt;h</span><span class="mi">1</span><span class="err">&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">settings.fp_heading</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/h</span><span class="mi">1</span><span class="err">&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endunless</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- Nil --&gt;</span>
 
 
-</span></code></pre>
+<span class="c">&lt;!-- Array --&gt;</span>
+
+
+<span class="c">&lt;!-- '' and false --&gt;</span>
+
+    <span class="nt">&lt;h1&gt;&lt;/h1&gt;</span>
+
+</code></pre>
 </div>
 
 <h2 id="misc">Misc</h2>
 
-<ul>
-  <li>对于全站需要使用的配置信息可以在 <code class="highlighter-rouge">config.yml</code> 中编辑，需要指出的是，config.yml 内容的修改并不会出发 jekyll 测试服务器的刷新。</li>
-  <li>页面的创建只是对模版渲染以及网站数据结构的综合运用。</li>
-  <li>关于样式，Jekyll 默认支持 sass。但是没有 sourcemap， 并不是特别爽，暂时还不知如何要爽由自己，有解决方式的同学，希望能够不吝赐教。</li>
-  <li>结合 Github 的发布是很容易的，个人或是组织，建立<code class="highlighter-rouge">&lt;name&gt;.github.io</code> 仓库（代码需要储存于master分支）， 项目建立 <code class="highlighter-rouge">gh-page</code>分支，上传代码即可。</li>
-  <li>评论功能的引入，建议使用百度的<a href="http://dev.duoshuo.com/docs">多说</a>，简单快捷。当然 disquss 这样的库也是存在的</li>
-</ul>
+<p>对于全站需要使用的配置信息可以在 <code class="highlighter-rouge">config.yml</code> 中编辑，需要指出的是，config.yml 内容的修改并不会出发 jekyll 测试服务器的刷新。
+页面的创建只是对模版渲染以及网站数据结构的综合运用。
+关于样式，Jekyll 默认支持 sass。但是没有 sourcemap， 并不是特别爽，暂时还不知如何要爽由自己，有解决方式的同学，希望能够不吝赐教。
+结合 Github 的发布是很容易的，个人或是组织，建立<code class="highlighter-rouge">&lt;name&gt;.github.io</code> 仓库（代码需要储存于master分支）， 项目建立 <code class="highlighter-rouge">gh-page</code>分支，上传代码即可。</p>
 
 <p>欢迎留言，转载，吐槽。</p>
 
