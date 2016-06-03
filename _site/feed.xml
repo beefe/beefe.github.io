@@ -6,13 +6,52 @@
 </description>
     <link>http://beefe.github.io//</link>
     <atom:link href="http://beefe.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 May 2016 17:35:43 +0800</pubDate>
-    <lastBuildDate>Wed, 18 May 2016 17:35:43 +0800</lastBuildDate>
-    <generator>Jekyll v3.1.3</generator>
+    <pubDate>Fri, 03 Jun 2016 16:57:25 +0800</pubDate>
+    <lastBuildDate>Fri, 03 Jun 2016 16:57:25 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>rnpm的使用研究</title>
+        <description>&lt;p&gt;在使用rnpm时，发现对于iOS工程部起作用，本文深刻分析了其中的原因，读完此文，你可以自己实现一个更好的rnpm。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+&lt;p&gt;​        在使用ReactNative 开发时，常常需要使用封装的Android 或者iOS控件，在使用时需要手动导入到工程项目中，很是麻烦，rnpm 可以自动链接库到项目工程中，但使用中发现，对于Android库的支持很完善，iOS库基本链接失败，需要手动链接才能成功，本篇文章分析了其中的原理，该文的最大价值在于解决此类问题的思路。&lt;/p&gt;
+
+&lt;p&gt;​	首先建立一个空白的ReactNative 工程，并使用git 跟踪其中的所有文件，因为配置的改变必然改变配置文件，但我们不知道究竟改变了哪些配置文件，以及这些配置文件的位置，都跟踪就是了，我选择了react-native-contacts 、react-native-permission-manager 、react-native-toast这三个组件，在实际使用中发现这三个控件一个完全能配置好，一个配置的乱七八糟的，还有一个什么也没配置，非常具有代表性。这个在package.json中配置以下，然后npm install ，这个时候执行以下git commit。&lt;/p&gt;
+
+&lt;p&gt;​	接下来，执行rnpm link ， git status 出现以下信息：然后提交以下&lt;img src=&quot;/img/2016-06-03-rnpm/1.jpg&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;​	发现这个project.pbxproj 是项目的配置文件，这个时候运行项目，仍然会报错。react-native-permission-manager 、react-native-toas 没有链接好。&lt;/p&gt;
+
+&lt;p&gt;​	手动更改好react-native-permission-manager 个库的配置，按照&lt;/p&gt;
+
+&lt;p&gt;http://reactnative.cn/docs/0.26/linking-libraries-ios.html#content 这里讲的就可以配置好，&lt;/p&gt;
+
+&lt;p&gt;然后再次执行git status , &lt;img src=&quot;/img/2016-06-03-rnpm/2.jpg&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;发现这个库的project.pbxproj改变了，经过进一步的查看，是文件中多了相应的信息HEADER_SEARCH_PATHS = (&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;				&quot;$(inherited)&quot;,
+				&quot;$(SRCROOT)/../../react-native/React/**&quot;, 至此，就搞明白了，rnpm 只是把库配置到全局，让项目感知到库的存在，但并没有配置库自身的依赖，这个第三方的库需要知道这个项目的react库的位置。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;但为什么react-native-contacts这个就可以配置好呢，还有一个配置的乱七八糟，原来是它们自身就带了这个配置了。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://beefe.github.io//tech-note/2016/06/03/rnpm.html</link>
+        <guid isPermaLink="true">http://beefe.github.io//tech-note/2016/06/03/rnpm.html</guid>
+        
+        <category>rnpm</category>
+        
+        
+        <category>tech-note</category>
+        
+      </item>
     
       <item>
         <title>Android WebView相关的一些笔记</title>
-        <description>&lt;p&gt;当Android项目使用WebView去加载网页的时候，免不了要与JS进行一些交互，所以也就免不了会遇到的一些问题，
+        <description>&lt;p&gt;当Android项目使用WebView去加载网页的时候，很多时候要与JS进行一些交互，所以就会遇到的一些问题，
 比如alert在WebView中弹不出来，比如JS调用Native方法报错，假如你也恰好遇到了这些问题，不妨看下我的解决方法，
 也许正好能帮上你的忙。&lt;/p&gt;
 
@@ -28,7 +67,7 @@
 &lt;h5 id=&quot;section&quot;&gt;不增加的后果就是当用户点击一个跳转链接时，会调用系统浏览器从而跳出你的程序&lt;/h5&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shouldOverrideUrlLoading&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WebView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loadUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
@@ -67,7 +106,7 @@
 &lt;/div&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JSCallbackInterface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nd&quot;&gt;@JavascriptInterface&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@JavascriptInterface&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     	&lt;span class=&quot;c1&quot;&gt;// native do something&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -78,7 +117,7 @@
 &lt;h5 id=&quot;jsnative-1&quot;&gt;JS调用Native方法可以这样调用&lt;/h5&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MyJSBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-	&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MyJSBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MyJSBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -97,8 +136,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;“NPObject deleted”错误，根据字面来理解应该是Native Object被删除了，这种情况出现在Web页面点击一个链接跳转后调用Android Native方法出现，
-每次Web页面跳转都会调用”onPageStarted”和”onPageFinished”方法，我们只需在”onPageFinished”方法中再次把Android Native Object添加即可&lt;/p&gt;
+&lt;p&gt;“NPObject deleted”错误，根据字面来理解应该是Native Object被删除了，这种情况出现在Web页面点击一个链接跳转后调用Android Native方法出现，每次Web页面跳转都会调用”onPageStarted”和”onPageFinished”方法，我们只需在”onPageFinished”方法中再次把Android Native Object添加即可&lt;/p&gt;
 
 &lt;h3 id=&quot;jshttps&quot;&gt;让JS支持https&lt;/h3&gt;
 
@@ -123,6 +161,8 @@
     &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSettings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setJavaScriptEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addJavascriptInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSCallbackInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MyJSBridge&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebChromeClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebChromeClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     

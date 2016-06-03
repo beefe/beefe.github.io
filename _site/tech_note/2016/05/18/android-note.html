@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Android WebView相关的一些笔记</title>
-    <meta name="description" content="当Android项目使用WebView去加载网页的时候，免不了要与JS进行一些交互，所以也就免不了会遇到的一些问题，比如alert在WebView中弹不出来，比如JS调用Native方法报错，假如你也恰好遇到了这些问题，不妨看下我的解决方法，也许正好能帮上你的忙。">
+    <meta name="description" content="当Android项目使用WebView去加载网页的时候，很多时候要与JS进行一些交互，所以就会遇到的一些问题，比如alert在WebView中弹不出来，比如JS调用Native方法报错，假如你也恰好遇到了这些问题，不妨看下我的解决方法，也许正好能帮上你的忙。">
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="canonical" href="http://beefe.github.io//tech_note/2016/05/18/android-note.html">
@@ -92,7 +92,7 @@
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        <p>当Android项目使用WebView去加载网页的时候，免不了要与JS进行一些交互，所以也就免不了会遇到的一些问题，
+        <p>当Android项目使用WebView去加载网页的时候，很多时候要与JS进行一些交互，所以就会遇到的一些问题，
 比如alert在WebView中弹不出来，比如JS调用Native方法报错，假如你也恰好遇到了这些问题，不妨看下我的解决方法，
 也许正好能帮上你的忙。</p>
 
@@ -108,7 +108,7 @@
 <h5 id="section">不增加的后果就是当用户点击一个跳转链接时，会调用系统浏览器从而跳出你的程序</h5>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">webView</span><span class="o">.</span><span class="na">setWebViewClient</span><span class="o">(</span><span class="k">new</span> <span class="n">WebViewClient</span><span class="o">()</span> <span class="o">{</span>
-	<span class="nd">@Override</span>
+    <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">shouldOverrideUrlLoading</span><span class="o">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">view</span><span class="o">.</span><span class="na">loadUrl</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
@@ -147,7 +147,7 @@
 </div>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">class</span> <span class="nc">JSCallbackInterface</span> <span class="o">{</span>
-	<span class="nd">@JavascriptInterface</span>
+    <span class="nd">@JavascriptInterface</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="n">myMethod</span><span class="o">()</span> <span class="o">{</span>
     	<span class="c1">// native do something</span>
     <span class="o">}</span>
@@ -158,7 +158,7 @@
 <h5 id="jsnative-1">JS调用Native方法可以这样调用</h5>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MyJSBridge</span><span class="p">){</span>
-	<span class="nb">window</span><span class="p">.</span><span class="nx">MyJSBridge</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">();</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">MyJSBridge</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre>
 </div>
@@ -177,8 +177,7 @@
 </code></pre>
 </div>
 
-<p>“NPObject deleted”错误，根据字面来理解应该是Native Object被删除了，这种情况出现在Web页面点击一个链接跳转后调用Android Native方法出现，
-每次Web页面跳转都会调用”onPageStarted”和”onPageFinished”方法，我们只需在”onPageFinished”方法中再次把Android Native Object添加即可</p>
+<p>“NPObject deleted”错误，根据字面来理解应该是Native Object被删除了，这种情况出现在Web页面点击一个链接跳转后调用Android Native方法出现，每次Web页面跳转都会调用”onPageStarted”和”onPageFinished”方法，我们只需在”onPageFinished”方法中再次把Android Native Object添加即可</p>
 
 <h3 id="jshttps">让JS支持https</h3>
 
@@ -203,6 +202,8 @@
     <span class="n">webView</span><span class="o">.</span><span class="na">getSettings</span><span class="o">().</span><span class="na">setJavaScriptEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 
     <span class="n">webView</span><span class="o">.</span><span class="na">addJavascriptInterface</span><span class="o">(</span><span class="k">new</span> <span class="n">JSCallbackInterface</span><span class="o">(),</span> <span class="s">"MyJSBridge"</span><span class="o">);</span>
+    
+    <span class="n">webView</span><span class="o">.</span><span class="na">setWebChromeClient</span><span class="o">(</span><span class="k">new</span> <span class="n">WebChromeClient</span><span class="o">());</span>
 
     <span class="n">webView</span><span class="o">.</span><span class="na">setWebViewClient</span><span class="o">(</span><span class="k">new</span> <span class="n">WebViewClient</span><span class="o">()</span> <span class="o">{</span>
     
