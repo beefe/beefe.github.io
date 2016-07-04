@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lodash introduction</title>
+    <meta name="description" content="npm 上下载量最大的库，有着极佳的运行效率与非常优雅的接口设计，提供了很多 es6 之前未能提供的 util function. lodash">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://beefe.github.io//tech-note/2016/06/25/lodash-introduction.html">
+    <link rel="alternate" type="application/rss+xml" title="BeeFE" href="http://beefe.github.io//feed.xml">
+</head>
+
+
+<body>
+
+    <!-- <header class="site-header">
+
+  <div id="toggle">
+
+    <a class="site-title" href="/">BeeFE</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+ -->
+    <!-- <div id=menu>
+    <a id="toggle" href="#">
+        <svg viewBox="0 0 18 15">
+            <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+            <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+            <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+    </a>
+    <ul>
+    
+        <li>
+            <a href="/#tech-note">技术笔记</a>
+        </li>
+    
+        <li>
+            <a href="/#web-components">组件开发</a>
+        </li>
+    
+    </ul>
+</div>
+ -->
+
+    <div class="page-content">
+        <div class="wrapper">
+            <article class="content" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Lodash introduction</h1>
+        <p class="post-meta">
+            
+                
+                <a class="author-name" href="http://skintest.github.io/">skinTest</a>
+                <span class="header-desc"> calm down | </span>
+            
+            <time class="header-desc" datetime="2016-06-25T00:00:00+08:00" itemprop="datePublished">
+                Jun 25, 2016
+            </time>
+        </p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        <p>npm 上下载量最大的库，有着极佳的运行效率与非常优雅的接口设计，提供了很多 es6 之前未能提供的 util function. <a href="https://lodash.com/docs#template">lodash</a></p>
+
+<!-- more -->
+
+<h1 id="lodash-introduction">lodash introduction</h1>
+
+<p>运行快，在 js 本身能力有限的情况下提供了大量抽象层次更高的函数。</p>
+
+<h2 id="installation">1.installation</h2>
+
+<p>各种模块类型全面支持</p>
+
+<p><strong>1. 浏览器</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"lodash.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>2. cmd</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i --save lodash
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Load the full build.</span>
+<span class="kd">var</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lodash'</span><span class="p">);</span>
+<span class="c1">// Load a method category.</span>
+<span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lodash/array'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">object</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lodash/fp/object'</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<h2 id="basic-usage">2.basic usage</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">_</span><span class="p">.</span><span class="nx">assign</span><span class="p">({</span> <span class="s1">'a'</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span> <span class="p">{</span> <span class="s1">'b'</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span> <span class="p">{</span> <span class="s1">'c'</span><span class="p">:</span> <span class="mi">3</span> <span class="p">});</span>
+<span class="c1">// ➜ { 'a': 1, 'b': 2, 'c': 3 }</span>
+<span class="nx">_</span><span class="p">.</span><span class="nx">map</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span> <span class="p">});</span>
+<span class="c1">// ➜ [3, 6, 9]</span>
+</code></pre>
+</div>
+
+<p>根据处理对象的不同，lodash 的方法被分为 <code class="highlighter-rouge">Array, Collection, Date, Function, Lang, Math, Number, Object, Seq, String, util, Properties, Methods</code> 12 个模块。 其中 Properties 和 Methods 是对 template 方法的参数设置。</p>
+
+<h2 id="chain">3.chain</h2>
+
+<p>通过 Seq 模块内方法实现。</p>
+
+<p>通过 <code class="highlighter-rouge">_</code> 方法，将会创建一个 lodash 对象（可以类比 Jquery 对象理解），对于以数组、函数、组合作为操作对象并返回数组的方法就可以链式调用了。如果一个方法操作或是返回简单值，那么链式调用将被直接中断。同时需要注意的是，在链式调用过程中，操作的结果值是不会主动返回的，如果要返回过程中的值需要显式地调用 <code class="highlighter-rouge">.value()</code> 方法。当显式地调用 <code class="highlighter-rouge">_.chain</code> 方法时，值得返回必须使用 <code class="highlighter-rouge">value()</code>。</p>
+
+<p>链式调用在执行时，将会延迟到需要返回值时。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+</code></pre>
+</div>
+
+<h2 id="interface-and-shorthand">4.interface and shorthand</h2>
+
+<h2 id="recipes">5.Recipes</h2>
+
+<ol>
+  <li>过滤对象的多余属性</li>
+</ol>
+
+
+    </div>
+
+    <!-- Duoshuo Comment BEGIN -->
+<a name="comments"> </a>
+<div id="comment">
+    <div class="ds-thread" data-urt="http://fex.baidu.com/tech-note/2016/06/25/lodash-introduction" data-title="Lodash introduction" data-thread-key="/tech-note/2016/06/25/lodash-introduction"></div>
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"fex"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+</div>
+<!-- Duoshuo Comment END -->
+
+</article>
+
+
+        </div>
+    </div>
+
+    <footer id="bottom">
+    <!-- <div class="content">
+        <p>A little better from Web Front End.
+</p>
+    </div> -->
+</footer>
+
+<script src="/scripts/zepto.min.js"></script>
+
+
+</body>
+
+</html>

@@ -1,6 +1,6 @@
-## 这什么？
+## 这是什么？
 
-这是 BeeFE 团队公共博客的源码，将文章提交到这里后就会在 <http://http://beefe.github.io> 上展现。
+这是 BeeFE 团队公共博客的源码，将文章提交到这里后就会在 <http://beefe.github.io> 上展现。
 
 
 ## 环境搭建
@@ -25,7 +25,13 @@
 
 ### 本地预览
 
-完成 jekyll 的安装后，在源码目录运行如下命令，就能在 localhost:4000 中预览了：
+完成 jekyll 的安装后，从公共主页获取源代码
+
+```bash
+$ git clone https://github.com/beefe/beefe.github.io.git
+```
+
+进入该目录运行如下命令，就能在 localhost:4000 中预览了：
 
 ```bash
    $ jekyll serve

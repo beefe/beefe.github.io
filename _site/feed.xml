@@ -6,9 +6,90 @@
 </description>
     <link>http://beefe.github.io//</link>
     <atom:link href="http://beefe.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 May 2016 18:59:51 +0800</pubDate>
-    <lastBuildDate>Tue, 10 May 2016 18:59:51 +0800</lastBuildDate>
+    <pubDate>Mon, 04 Jul 2016 11:53:54 +0800</pubDate>
+    <lastBuildDate>Mon, 04 Jul 2016 11:53:54 +0800</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Lodash introduction</title>
+        <description>&lt;p&gt;npm 上下载量最大的库，有着极佳的运行效率与非常优雅的接口设计，提供了很多 es6 之前未能提供的 util function. &lt;a href=&quot;https://lodash.com/docs#template&quot;&gt;lodash&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&quot;lodash-introduction&quot;&gt;lodash introduction&lt;/h1&gt;
+
+&lt;p&gt;运行快，在 js 本身能力有限的情况下提供了大量抽象层次更高的函数。&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;1.installation&lt;/h2&gt;
+
+&lt;p&gt;各种模块类型全面支持&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. 浏览器&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lodash.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;2. cmd&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm i --save lodash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Load the full build.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;lodash&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Load a method category.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;lodash/array&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;lodash/fp/object&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;basic-usage&quot;&gt;2.basic usage&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;b&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;c&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// ➜ { &#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3 }&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// ➜ [3, 6, 9]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;根据处理对象的不同，lodash 的方法被分为 &lt;code class=&quot;highlighter-rouge&quot;&gt;Array, Collection, Date, Function, Lang, Math, Number, Object, Seq, String, util, Properties, Methods&lt;/code&gt; 12 个模块。 其中 Properties 和 Methods 是对 template 方法的参数设置。&lt;/p&gt;
+
+&lt;h2 id=&quot;chain&quot;&gt;3.chain&lt;/h2&gt;
+
+&lt;p&gt;通过 Seq 模块内方法实现。&lt;/p&gt;
+
+&lt;p&gt;通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; 方法，将会创建一个 lodash 对象（可以类比 Jquery 对象理解），对于以数组、函数、组合作为操作对象并返回数组的方法就可以链式调用了。如果一个方法操作或是返回简单值，那么链式调用将被直接中断。同时需要注意的是，在链式调用过程中，操作的结果值是不会主动返回的，如果要返回过程中的值需要显式地调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;.value()&lt;/code&gt; 方法。当显式地调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;_.chain&lt;/code&gt; 方法时，值得返回必须使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;value()&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;链式调用在执行时，将会延迟到需要返回值时。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;interface-and-shorthand&quot;&gt;4.interface and shorthand&lt;/h2&gt;
+
+&lt;h2 id=&quot;recipes&quot;&gt;5.Recipes&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;过滤对象的多余属性&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sat, 25 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://beefe.github.io//tech-note/2016/06/25/lodash-introduction.html</link>
+        <guid isPermaLink="true">http://beefe.github.io//tech-note/2016/06/25/lodash-introduction.html</guid>
+        
+        <category>lodash</category>
+        
+        <category>util</category>
+        
+        <category>functional programming</category>
+        
+        
+        <category>tech-note</category>
+        
+      </item>
     
       <item>
         <title>Jekyll Basic Usage</title>
