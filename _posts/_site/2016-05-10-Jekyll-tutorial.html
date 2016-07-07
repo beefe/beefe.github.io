@@ -1,104 +1,10 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Jekyll Basic Usage</title>
-    <meta name="description" content="Jekyll是一款广受好评的静态博客系统，主要基于Ruby构建，某些功能也需要nodejs与python辅助。因为本博客系统也是基于Jekyll搭建的，就着刚学习搭建完成，写一篇博客总结一下Jekyll的具体使用。如果想要更系统地进行学习，请参考官方文档">
-
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://beefe.github.io//tech-note/2016/05/10/Jekyll-tutorial.html">
-    <link rel="alternate" type="application/rss+xml" title="BeeFE" href="http://beefe.github.io//feed.xml">
-</head>
-
-
-<body>
-
-    <!-- <header class="site-header">
-
-  <div id="toggle">
-
-    <a class="site-title" href="/">BeeFE</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/about/">About</a>
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    </nav>
-
-  </div>
-
-</header>
- -->
-    <!-- <div id=menu>
-    <a id="toggle" href="#">
-        <svg viewBox="0 0 18 15">
-            <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-            <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-            <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-    </a>
-    <ul>
-    
-        <li>
-            <a href="/#tech-note">技术笔记</a>
-        </li>
-    
-        <li>
-            <a href="/#web-components">组件开发</a>
-        </li>
-    
-    </ul>
-</div>
- -->
-
-    <div class="page-content">
-        <div class="wrapper">
-            <article class="content" itemscope itemtype="http://schema.org/BlogPosting">
-
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Jekyll Basic Usage</h1>
-        <p class="post-meta">
-            
-                
-                <a class="author-name" href="http://skintest.github.io/">薛淞之</a>
-                <span class="header-desc"> calm down | </span>
-            
-            <time class="header-desc" datetime="2016-05-10T00:00:00+08:00" itemprop="datePublished">
-                May 10, 2016
-            </time>
-        </p>
-    </header>
-
-    <div class="post-content" itemprop="articleBody">
-        <p>Jekyll是一款广受好评的静态博客系统，主要基于Ruby构建，某些功能也需要nodejs与python辅助。因为本博客系统也是基于Jekyll搭建的，就着刚学习搭建完成，写一篇博客总结一下Jekyll的具体使用。如果想要更系统地进行学习，请参考<a href="https://jekyllrb.com/docs/">官方文档</a></p>
+<p>Jekyll是一款广受好评的静态博客系统，主要基于Ruby构建，某些功能也需要nodejs与python辅助。因为本博客系统也是基于Jekyll搭建的，就着刚学习搭建完成，写一篇博客总结一下Jekyll的具体使用。如果想要更系统地进行学习，请参考<a href="https://jekyllrb.com/docs/">官方文档</a></p>
 
 <!-- more -->
 
 <h2 id="installation-and-quik-start">Installation and Quik-start</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>~ <span class="nv">$ </span>gem install jekyll
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>~ <span class="nv">$ </span>gem install jekyll
 ~ <span class="nv">$ </span>jekyll new myblog
 ~ <span class="nv">$ </span><span class="nb">cd </span>myblog
 ~/myblog <span class="nv">$ </span>jekyll serve
@@ -277,7 +183,7 @@ tag: Jekyll
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
 <span class="c">&lt;!-- TAG --&gt;</span>
 {% if user.name == 'elvis' %}
   Hey Elvis
@@ -340,43 +246,3 @@ tag: Jekyll
 </ul>
 
 <p>欢迎留言，转载，吐槽。</p>
-
-    </div>
-
-    <!-- Duoshuo Comment BEGIN -->
-<a name="comments"> </a>
-<div id="comment">
-    <div class="ds-thread" data-urt="http://fex.baidu.com/tech-note/2016/05/10/Jekyll-tutorial" data-title="Jekyll Basic Usage" data-thread-key="/tech-note/2016/05/10/Jekyll-tutorial"></div>
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:"fex"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = 'http://static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-</div>
-<!-- Duoshuo Comment END -->
-
-</article>
-
-
-        </div>
-    </div>
-
-    <footer id="bottom">
-    <!-- <div class="content">
-        <p>A little better from Web Front End.
-</p>
-    </div> -->
-</footer>
-
-<script src="/scripts/zepto.min.js"></script>
-
-
-</body>
-
-</html>

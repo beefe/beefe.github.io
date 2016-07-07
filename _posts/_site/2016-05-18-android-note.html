@@ -1,0 +1,149 @@
+<p>当Android项目使用WebView去加载网页的时候，很多时候要与JS进行一些交互，所以就会遇到的一些问题，
+比如alert在WebView中弹不出来，比如JS调用Native方法报错，假如你也恰好遇到了这些问题，不妨看下我的解决方法，
+也许正好能帮上你的忙。</p>
+
+<!-- more -->
+
+<h3 id="androidwebview">首先Android使用WebView最基本的就是</h3>
+
+<pre><code class="language-Java">webView.loadUrl(url);
+</code></pre>
+
+<h3 id="webview">为了让用户浏览网页完全在WebView中进行，我们需要增加如下代码</h3>
+
+<h5 id="section">不增加的后果就是当用户点击一个跳转链接时，会调用系统浏览器从而跳出你的程序</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">webView</span><span class="o">.</span><span class="na">setWebViewClient</span><span class="o">(</span><span class="k">new</span> <span class="n">WebViewClient</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">shouldOverrideUrlLoading</span><span class="o">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">view</span><span class="o">.</span><span class="na">loadUrl</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre>
+</div>
+
+<h3 id="webviewjs">让WebView支持JS</h3>
+
+<h5 id="jsjs----">这个不用解释了吧，不打开JS支持怎么与JS交互呢 (- -#)</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">webView</span><span class="o">.</span><span class="na">getSettings</span><span class="o">().</span><span class="na">setJavaScriptEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h3 id="webviewjsalert">让WebView支持JS的alert</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">webView</span><span class="o">.</span><span class="na">setWebChromeClient</span><span class="o">(</span><span class="k">new</span> <span class="n">WebChromeClient</span><span class="o">());</span>
+</code></pre>
+</div>
+
+<p>为什么加上一个WebChromeClient就支持alert了呢？因为WebChromeClient里有这个方法</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onJsAlert</span><span class="p">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="n">String</span> <span class="n">message</span><span class="o">,</span> <span class="n">JsResult</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onJsAlert</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">url</span><span class="o">,</span> <span class="n">message</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="jsnative">给JS提供一个Native方法</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">webView</span><span class="o">.</span><span class="na">addJavascriptInterface</span><span class="o">(</span><span class="k">new</span> <span class="n">JSCallbackInterface</span><span class="o">(),</span> <span class="s">"MyJSBridge"</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">class</span> <span class="nc">JSCallbackInterface</span> <span class="o">{</span>
+    <span class="nd">@JavascriptInterface</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">myMethod</span><span class="o">()</span> <span class="o">{</span>
+    	<span class="c1">// native do something</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="jsnative-1">JS调用Native方法可以这样调用</h5>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MyJSBridge</span><span class="p">){</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">MyJSBridge</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>当然，”Bridge”叫什么名字,Native Method叫什么名字，需要什么参数，你们自己来定，但是一定要让JS和Android Native的名字参数保持一致</p>
+
+<h3 id="jsnativenpobject-deleted">当JS调用Native方法报”NPObject deleted”错误时，解决方案如下</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">webView</span><span class="o">.</span><span class="na">setWebViewClient</span><span class="o">(</span><span class="k">new</span> <span class="n">WebViewClient</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPageFinished</span><span class="o">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onPageFinished</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">url</span><span class="o">);</span>
+        <span class="n">view</span><span class="o">.</span><span class="na">addJavascriptInterface</span><span class="o">(</span><span class="k">new</span> <span class="n">JSCallbackInterface</span><span class="o">(),</span> <span class="s">"StagingPayBridge"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre>
+</div>
+
+<p>“NPObject deleted”错误，根据字面来理解应该是Native Object被删除了，这种情况出现在Web页面点击一个链接跳转后调用Android Native方法出现，每次Web页面跳转都会调用”onPageStarted”和”onPageFinished”方法，我们只需在”onPageFinished”方法中再次把Android Native Object添加即可</p>
+
+<h3 id="jshttps">让JS支持https</h3>
+
+<h5 id="webviewwebhttps--">WebView加载一些Web页加载不出来，比如支付宝的支付网页，因为是https (≧﹏ ≦)</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">webView</span><span class="o">.</span><span class="na">setWebViewClient</span><span class="o">(</span><span class="k">new</span> <span class="n">WebViewClient</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onReceivedSslError</span><span class="o">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">SslErrorHandler</span> <span class="n">handler</span><span class="o">,</span> <span class="n">SslError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">handler</span><span class="o">.</span><span class="na">proceed</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre>
+</div>
+
+<h2 id="section-1">好了，我们把上面的代码整理下</h2>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">...</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">setWebView</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="o">){</span>
+
+    <span class="n">webView</span><span class="o">.</span><span class="na">loadUrl</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+
+    <span class="n">webView</span><span class="o">.</span><span class="na">getSettings</span><span class="o">().</span><span class="na">setJavaScriptEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+
+    <span class="n">webView</span><span class="o">.</span><span class="na">addJavascriptInterface</span><span class="o">(</span><span class="k">new</span> <span class="n">JSCallbackInterface</span><span class="o">(),</span> <span class="s">"MyJSBridge"</span><span class="o">);</span>
+    
+    <span class="n">webView</span><span class="o">.</span><span class="na">setWebChromeClient</span><span class="o">(</span><span class="k">new</span> <span class="n">WebChromeClient</span><span class="o">());</span>
+
+    <span class="n">webView</span><span class="o">.</span><span class="na">setWebViewClient</span><span class="o">(</span><span class="k">new</span> <span class="n">WebViewClient</span><span class="o">()</span> <span class="o">{</span>
+    
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">shouldOverrideUrlLoading</span><span class="o">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">view</span><span class="o">.</span><span class="na">loadUrl</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPageFinished</span><span class="o">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">.</span><span class="na">onPageFinished</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">url</span><span class="o">);</span>
+            <span class="n">view</span><span class="o">.</span><span class="na">addJavascriptInterface</span><span class="o">(</span><span class="k">new</span> <span class="n">JSCallbackInterface</span><span class="o">(),</span> <span class="s">"StagingPayBridge"</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onReceivedSslError</span><span class="o">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">SslErrorHandler</span> <span class="n">handler</span><span class="o">,</span> <span class="n">SslError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">handler</span><span class="o">.</span><span class="na">proceed</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">});</span>
+<span class="o">}</span>
+<span class="o">...</span>
+</code></pre>
+</div>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">...</span>
+<span class="kd">private</span> <span class="kd">class</span> <span class="nc">JSCallbackInterface</span> <span class="o">{</span>
+    <span class="nd">@JavascriptInterface</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">myMethod</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// native do something</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="o">...</span>
+</code></pre>
+</div>
+
+<p>以上就是我今天开发中遇到的一些关于Android WebView的问题，分享给大家。 ^ ~ ^</p>

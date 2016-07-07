@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>&lt;标题&gt;</title>
-    <meta name="description" content="简介，这会在首页显示">
+    <title>rnpm的使用研究</title>
+    <meta name="description" content="在使用rnpm时，发现对于iOS工程部起作用，本文深刻分析了其中的原因，读完此文，你可以自己实现一个更好的rnpm。">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://beefe.github.io//2016/05/06/empty.html">
+    <link rel="canonical" href="http://beefe.github.io//tech-note/2016/06/03/rnpm.html">
     <link rel="alternate" type="application/rss+xml" title="BeeFE" href="http://beefe.github.io//feed.xml">
 </head>
 
@@ -78,35 +78,52 @@
             <article class="content" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline"><标题></h1>
+        <h1 class="post-title" itemprop="name headline">rnpm的使用研究</h1>
         <p class="post-meta">
             
                 
-                <a class="author-name" href=""></a>
-                <span class="header-desc">  | </span>
+                <a class="author-name" href="https://github.com/voidException">aihaitao</a>
+                <span class="header-desc"> no more | </span>
             
-            <time class="header-desc" datetime="2016-05-06T00:00:00+08:00" itemprop="datePublished">
-                May 6, 2016
+            <time class="header-desc" datetime="2016-06-03T00:00:00+08:00" itemprop="datePublished">
+                Jun 3, 2016
             </time>
         </p>
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        <p>简介，这会在首页显示</p>
+        <p>在使用rnpm时，发现对于iOS工程部起作用，本文深刻分析了其中的原因，读完此文，你可以自己实现一个更好的rnpm。</p>
 
 <!-- more -->
+<p>​        在使用ReactNative 开发时，常常需要使用封装的Android 或者iOS控件，在使用时需要手动导入到工程项目中，很是麻烦，rnpm 可以自动链接库到项目工程中，但使用中发现，对于Android库的支持很完善，iOS库基本链接失败，需要手动链接才能成功，本篇文章分析了其中的原理，该文的最大价值在于解决此类问题的思路。</p>
 
-<p>其上的部分会作为摘要显示在首页中，在<code class="highlighter-rouge">post</code>这个layout中，摘要的所有标注和标签都会被 escape 掉。如果想要保留样式或是标签，请先找薛淞之改模版。</p>
+<p>​	首先建立一个空白的ReactNative 工程，并使用git 跟踪其中的所有文件，因为配置的改变必然改变配置文件，但我们不知道究竟改变了哪些配置文件，以及这些配置文件的位置，都跟踪就是了，我选择了react-native-contacts 、react-native-permission-manager 、react-native-toast这三个组件，在实际使用中发现这三个控件一个完全能配置好，一个配置的乱七八糟的，还有一个什么也没配置，非常具有代表性。这个在package.json中配置以下，然后npm install ，这个时候执行以下git commit。</p>
 
-<p>正文（注意上面有两个空格）</p>
+<p>​	接下来，执行rnpm link ， git status 出现以下信息：然后提交以下<img src="/img/2016-06-03-rnpm/1.jpg" alt="1" /></p>
 
+<p>​	发现这个project.pbxproj 是项目的配置文件，这个时候运行项目，仍然会报错。react-native-permission-manager 、react-native-toas 没有链接好。</p>
+
+<p>​	手动更改好react-native-permission-manager 个库的配置，按照</p>
+
+<p>http://reactnative.cn/docs/0.26/linking-libraries-ios.html#content 这里讲的就可以配置好，</p>
+
+<p>然后再次执行git status , <img src="/img/2016-06-03-rnpm/2.jpg" alt="2" /></p>
+
+<p>发现这个库的project.pbxproj改变了，经过进一步的查看，是文件中多了相应的信息HEADER_SEARCH_PATHS = (</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>				"$(inherited)",
+				"$(SRCROOT)/../../react-native/React/**", 至此，就搞明白了，rnpm 只是把库配置到全局，让项目感知到库的存在，但并没有配置库自身的依赖，这个第三方的库需要知道这个项目的react库的位置。
+</code></pre>
+</div>
+
+<p>但为什么react-native-contacts这个就可以配置好呢，还有一个配置的乱七八糟，原来是它们自身就带了这个配置了。</p>
 
     </div>
 
     <!-- Duoshuo Comment BEGIN -->
 <a name="comments"> </a>
 <div id="comment">
-    <div class="ds-thread" data-urt="http://fex.baidu.com/2016/05/06/empty" data-title="<标题>" data-thread-key="/2016/05/06/empty"></div>
+    <div class="ds-thread" data-urt="http://fex.baidu.com/tech-note/2016/06/03/rnpm" data-title="rnpm的使用研究" data-thread-key="/tech-note/2016/06/03/rnpm"></div>
     <script type="text/javascript">
     var duoshuoQuery = {short_name:"fex"};
     (function() {

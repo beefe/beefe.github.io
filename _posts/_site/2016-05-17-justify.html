@@ -1,0 +1,108 @@
+<p>前些日子在IT1024微信群里看到一个题目，大意是要求实现两端对齐，可以达到下图的效果。因为笨，所以只能拿别人的成果汇总一下啦~
+<img src="/img/2016-05-17-justify/0.gif" alt="盗图~" /></p>
+
+<!-- more -->
+
+<p><strong>1. 题目实现</strong></p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>HTML:
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>5<span class="nt">&lt;/i&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/i&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/i&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/i&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/i&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+CSS:
+    .box{
+        width: 300px;
+        height: 30px;
+        margin: 20px auto 0;
+        text-align: justify;
+    }
+    .num{
+        display: inline-block;
+        width:20px;
+        height:20px;
+        line-height:20px;
+        text-align:center;
+        border-radius: 50%;
+        color:#fff;
+        font-size:16px;
+        background-color:#000;
+        font-style: normal;
+    }
+    .box:after {
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        top: -24px;
+        z-index: -1;
+        background: red;
+    }
+</code></pre>
+</div>
+
+<p><strong>最终效果如图：</strong></p>
+
+<p><img src="/img/2016-05-17-justify/result.png" alt="效果{100x20}" /></p>
+
+<p><strong>2. 表单文字两端对齐</strong></p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>HTML:
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>姓名<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">&gt;</span>
+    ...
+
+CSS:
+    .label {
+        display: inline-block;
+        width: 4em;
+        text-align: justify;
+        vertical-align: middle;
+        height: 1.4em;
+    }
+    .label:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+</code></pre>
+</div>
+
+<p><strong>最终效果如图：</strong></p>
+
+<p><img src="/img/2016-05-17-justify/text-justify.png" alt="文字两端对齐" /></p>
+
+<p><strong>4. 最后</strong></p>
+
+<ul>
+  <li>
+    <p>应用情景自行发挥想象力，不对的请指正，不足的请补充~</p>
+  </li>
+  <li>
+    <p><a href="http://www.cnblogs.com/PeunZhang/p/3289493.html">白色橡树</a></p>
+  </li>
+  <li>
+    <p><a href="https://mp.weixin.qq.com/s?__biz=MzI1MTA2MDcyOQ==&amp;mid=2649567067&amp;idx=1&amp;sn=8c9602c305026c55f412fe3d398cbf58&amp;scene=1&amp;srcid=0517bLlVIoPAwAkZCFi1BR1A&amp;key=f5c31ae61525f82e8f8b4b4037818cd1fbcfad3db884b839f9db2911f35ba6474789c618cf2568f3511b4ff2738f83a8&amp;ascene=0&amp;uin=NTU4ODc2MTM1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.5+build(14F27)&amp;version=11020113&amp;pass_ticket=on%2Bb6n1MZWqiq1BulIBHH%2BRfTMAKgMmGKVBVxGC2uUJ5MuYAIPxHLdBuevdSjgmZ">闲谈css那些事儿</a></p>
+  </li>
+</ul>
