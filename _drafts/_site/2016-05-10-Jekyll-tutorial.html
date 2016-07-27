@@ -1,0 +1,233 @@
+<p>Jekyll是一款广受好评的静态博客系统，主要基于Ruby构建，某些功能也需要nodejs与python辅助。因为本博客系统也是基于Jekyll搭建的，就着刚学习搭建完成，写一篇博客总结一下Jekyll的具体使用。如果想要更系统地进行学习，请参考<a href="https://jekyllrb.com/docs/">官方文档</a></p>
+
+<!-- more -->
+
+<h2 id="installation-and-quik-start">Installation and Quik-start</h2>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>~ <span class="nv">$ </span>gem install jekyll
+~ <span class="nv">$ </span>jekyll new myblog
+~ <span class="nv">$ </span><span class="nb">cd </span>myblog
+~/myblog <span class="nv">$ </span>jekyll serve
+<span class="c"># =&gt; Now browse to http://localhost:4000</span>
+</code></pre>
+</div>
+
+<p>jekyll 基于Ruby， 由 gem 安装，如果安装遇上问题搜索一下 gem 国内原，也可参考仓库的 <a href="https://github.com/beefe/beefe.github.io/blob/master/README.md">README 文档</a>。 安装后 Jekyll 可以在命令行中调用，代码第二行便是调用 jekyll 工具新建了一个博客目录，这个目录结构可以看作是 Jekyll 使用的基本目录结构，在此基础上博客便能正常运转；进一步编辑可以在<code class="highlighter-rouge">_post</code>目录下按照<a href="https://jekyllrb.com/docs/posts/">基本格式</a>添加内容，亦可对网站资源进行更为深入的定制。之后在相应的目录中调用 Jekyll 的调试服务器即可，jekyll <a href="https://jekyllrb.com/docs/usage/">命令行api</a>。</p>
+
+<h2 id="site-model">Site Model</h2>
+
+<p>作为一个只懂 H5, CSS 和 JS 的前端小白，使用 Jekyll 构建网站就必须得面对两个问题， YAML是个什么鬼 以及 全站的数据模型究竟是咋回事儿。顺道说一句，jekyll 是支持 JSON 和 CSV 的。撇开第一眼就看蒙逼的YAML</p>
+
+<h3 id="yaml">YAML</h3>
+
+<ul>
+  <li>YAML 是一种受到多种语言(python, ruby, c# …)广泛支持的数据格式，以小白的视点看基本就是和 JSON 一个意思，讲的牛逼一点，YAML是JSON的父集。</li>
+  <li>YAML Yet Another Markup Language, which is easy to write and easy to read</li>
+  <li>YAML is structured by indentation</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>健值对</li>
+</ul>
+
+<pre><code class="language-YAML">key: value
+</code></pre>
+
+<ul>
+  <li>基本数据结构</li>
+</ul>
+
+<pre><code class="language-YAML">a: 123                     # an integer
+b: "123"                   # a string, disambiguated by quotes
+c: 123.0                   # a float
+d: !!float 123             # also a float via explicit data type prefixed by (!!)
+e: !!str 123               # a string, disambiguated by explicit type
+f: !!str Yes               # a string via explicit type
+g: Yes                     # a boolean True (yaml1.1), string "Yes" (yaml1.2)
+h: Yes we have No bananas  # a string, "Yes" and "No" disambiguated by context.
+picture: !!binary |        # binary data
+  R0lGODdhDQAIAIAAAAAAANn
+  Z2SwAAAAADQAIAAACF4SDGQ
+  ar3xxbJ9p0qa7R0YxwzaFME
+  1IAADs=
+</code></pre>
+
+<ul>
+  <li>数组的 <em>行内</em> 与 <em>缩进</em> 表示</li>
+</ul>
+
+<pre><code class="language-YAML">men: [John Smith, Bill Jones]
+women:
+  - Mary Smith
+  - Susan Williams
+</code></pre>
+
+<ul>
+  <li>多行字符串的表示</li>
+</ul>
+
+<pre><code class="language-YAML">specialDelivery:  &gt;
+    Follow the Yellow Brick
+    Road to the Emerald City.
+street: |
+        123 Tornado Alley
+        Suite 16
+
+
+</code></pre>
+
+<ul>
+  <li>一个综合一点的例子</li>
+</ul>
+
+<pre><code class="language-YAML">receipt:     Oz-Ware Purchase Invoice
+date:        2012-08-06
+customer:
+    first_name:   Dorothy
+    family_name:  Gale
+
+items:
+    - part_no:   A4786
+      descrip:   Water Bucket (Filled)
+      price:     1.47
+      quantity:  4
+
+    - part_no:   E1628
+      descrip:   High Heeled "Ruby" Slippers
+      size:      8
+      price:     133.7
+      quantity:  1
+
+bill-to:  &amp;id001
+    street: |
+            123 Tornado Alley
+            Suite 16
+    city:   East Centerville
+    state:  KS
+
+ship-to:  *id001
+
+specialDelivery:  &gt;
+    Follow the Yellow Brick
+    Road to the Emerald City.
+    Pay no attention to the
+    man behind the curtain.
+</code></pre>
+
+<h3 id="front-matter">Front Matter</h3>
+<p>Font Matter，用官网的话说 ‘The front matter is where Jekyll starts to get really cool’。当一个文件头部有一块 YAML 内容时，这块内容会被 Jekyll 处理，同时该文件本身也变成了一个特殊文件，比如说 <code class="highlighter-rouge">_posts</code> 内的博客文件。需要注意的有两方面内容，<em>第一</em> Front Matter 的格式规范；<em>第二</em> 常用变量的作用与文档查询</p>
+
+<ul>
+  <li>Front Matter 必须出现在文章头部，换言之从第一行开始就好了</li>
+  <li>Front Matter 被包裹在两行分割线内，这两道分割线必须是 [MUST] 三道杠 <code class="highlighter-rouge">---</code></li>
+  <li>Front Matter 内定义的数据可以在文件处理过程中通过 liquid 模版利用</li>
+  <li>对于全站通用的数据，可以在 <code class="highlighter-rouge">_data</code> 目录内定义，如作者；或是在 <code class="highlighter-rouge">_config.yml</code> 内配置。</li>
+</ul>
+
+<pre><code class="language-YAML">---
+layout: post
+title: Jekyll Basic Usage
+author: xszhi
+categories: tech_note
+tag: Jekyll
+---
+</code></pre>
+
+<ul>
+  <li>
+    <p>查看变量时注意三方面内容。</p>
+
+    <ol>
+      <li>目录结构有没有对应名称</li>
+      <li>相应模版中有没有调用</li>
+      <li>是否为 Jekyll 预定义</li>
+    </ol>
+  </li>
+  <li>
+    <p>以下简单分析本例，, 更细致的使用见下一个章节。</p>
+
+    <ol>
+      <li><code class="highlighter-rouge">layout: post</code> 表示在渲染时使用 <code class="highlighter-rouge">_layout</code> 目录下的 <code class="highlighter-rouge">post.html</code> 模版</li>
+      <li><code class="highlighter-rouge">title: Jekyll Basic Usage</code> 数据通过模版<code class="highlighter-rouge">post.html</code>渲染时候的 <code class="highlighter-rouge">page.title</code></li>
+      <li><code class="highlighter-rouge">author: xszhi</code> 渲染时的 <code class="highlighter-rouge">page.author</code>， 同时用于调用 <code class="highlighter-rouge">site.data.authors.xszhi</code>， 请查看文件 <code class="highlighter-rouge">/_data/authors</code></li>
+      <li>最后两行均是为了对文章内容进行进一步细分而设定的自定义数据</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="call-data">Call Data</h3>
+
+<p>数据的调用需要熟悉两方面内容</p>
+
+<ul>
+  <li><a href="https://help.shopify.com/themes/liquid/basics">liquid</a> 模版语法，以及 Jekyll 对 liquid 的<a href="https://help.shopify.com/themes/liquid/basics">扩张</a></li>
+  <li>挂载数据的<a href="https://jekyllrb.com/docs/variables/">关键对象</a>及其api</li>
+  <li>
+    <p>下图是想说明 Jekyll 的官方文档已经很详略得当了，建议大家过一遍 Variables, Templates 以及 Configuration这三个部分(我想测下图片是否能够正常显示)，</p>
+
+    <p><img src="/img/2016-05-10-jekyll-tutorial/global_variables.png" alt="" /></p>
+  </li>
+</ul>
+
+<p>Liquid 要点</p>
+
+<ul>
+  <li>核心概念有三个 Tag, Object, Filter
+    <ol>
+      <li>Tag 完成流控制</li>
+      <li>Objects 用于渲染内容</li>
+      <li>Filter 用于修改，调整数据</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- TAG --&gt;</span>
+
+
+<span class="c">&lt;!-- Objects --&gt;</span>
+<span class="nt">&lt;p&gt;</span>Jekyll Basic Usage<span class="nt">&lt;/p&gt;</span>
+<span class="c">&lt;!-- output  --&gt;</span>
+<span class="nt">&lt;p&gt;</span> Jekyll Basic Usage <span class="nt">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- Filters --&gt;</span>
+sales.jpg
+<span class="c">&lt;!-- Output: sales.jpg --&gt;</span>
+</code></pre>
+</div>
+
+<ul>
+  <li><a href="https://help.shopify.com/themes/liquid/basics/operators">操作符</a>只包括逻辑和比较操作符</li>
+  <li>Data Type 注意 Nil 和 EmptyDrop
+    <ol>
+      <li>``  给变量赋值一个 str</li>
+      <li>对于 Nil，需要注意的是，其被转换为 false</li>
+      <li>Array的遍历操作</li>
+      <li>关于真假 在 liquid 内除了 nil 和 false 其它值均为真</li>
+    </ol>
+  </li>
+  <li>以下是一些简单的例子，进一步熟悉可浏览 <code class="highlighter-rouge">jekyll new &lt;name&gt;</code> 生成的代码,更多内容请参考<a href="https://help.shopify.com/themes/liquid/basics">官方文档</a></li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- Nil --&gt;</span>
+
+
+<span class="c">&lt;!-- Array --&gt;</span>
+
+
+<span class="c">&lt;!-- '' and false --&gt;</span>
+
+    <span class="nt">&lt;h1&gt;&lt;/h1&gt;</span>
+
+</code></pre>
+</div>
+
+<h2 id="misc">Misc</h2>
+
+<p>对于全站需要使用的配置信息可以在 <code class="highlighter-rouge">config.yml</code> 中编辑，需要指出的是，config.yml 内容的修改并不会出发 jekyll 测试服务器的刷新。
+页面的创建只是对模版渲染以及网站数据结构的综合运用。
+关于样式，Jekyll 默认支持 sass。但是没有 sourcemap， 并不是特别爽，暂时还不知如何要爽由自己，有解决方式的同学，希望能够不吝赐教。
+结合 Github 的发布是很容易的，个人或是组织，建立<code class="highlighter-rouge">&lt;name&gt;.github.io</code> 仓库（代码需要储存于master分支）， 项目建立 <code class="highlighter-rouge">gh-page</code>分支，上传代码即可。</p>
+
+<p>欢迎留言，转载，吐槽。</p>

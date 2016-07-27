@@ -1,105 +1,11 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>text-align: justify</title>
-    <meta name="description" content="前些日子在IT1024微信群里看到一个题目，大意是要求实现两端对齐，可以达到下图的效果。因为笨，所以只能拿别人的成果汇总一下啦~">
-
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://beefe.github.io//tech-note/2016/05/17/justify.html">
-    <link rel="alternate" type="application/rss+xml" title="BeeFE" href="http://beefe.github.io//feed.xml">
-</head>
-
-
-<body>
-
-    <!-- <header class="site-header">
-
-  <div id="toggle">
-
-    <a class="site-title" href="/">BeeFE</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/about/">About</a>
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    </nav>
-
-  </div>
-
-</header>
- -->
-    <!-- <div id=menu>
-    <a id="toggle" href="#">
-        <svg viewBox="0 0 18 15">
-            <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-            <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-            <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-    </a>
-    <ul>
-    
-        <li>
-            <a href="/#tech-note">技术笔记</a>
-        </li>
-    
-        <li>
-            <a href="/#web-components">组件开发</a>
-        </li>
-    
-    </ul>
-</div>
- -->
-
-    <div class="page-content">
-        <div class="wrapper">
-            <article class="content" itemscope itemtype="http://schema.org/BlogPosting">
-
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">text-align: justify</h1>
-        <p class="post-meta">
-            
-                
-                <a class="author-name" href="http://www.desc.link/">znn</a>
-                <span class="header-desc"> Nobody | </span>
-            
-            <time class="header-desc" datetime="2016-05-17T00:00:00+08:00" itemprop="datePublished">
-                May 17, 2016
-            </time>
-        </p>
-    </header>
-
-    <div class="post-content" itemprop="articleBody">
-        <p>前些日子在IT1024微信群里看到一个题目，大意是要求实现两端对齐，可以达到下图的效果。因为笨，所以只能拿别人的成果汇总一下啦~
+<p>前些日子在IT1024微信群里看到一个题目，大意是要求实现两端对齐，可以达到下图的效果。因为笨，所以只能拿别人的成果汇总一下啦~
 <img src="/img/2016-05-17-justify/0.gif" alt="盗图~" /></p>
 
 <!-- more -->
 
 <p><strong>1. 题目实现</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>HTML:
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>HTML:
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/i&gt;</span>
         <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"num"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/i&gt;</span>
@@ -161,7 +67,7 @@ CSS:
 
 <p><strong>2. 表单文字两端对齐</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>HTML:
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>HTML:
     <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>姓名<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">&gt;</span>
     ...
 
@@ -200,43 +106,3 @@ CSS:
     <p><a href="https://mp.weixin.qq.com/s?__biz=MzI1MTA2MDcyOQ==&amp;mid=2649567067&amp;idx=1&amp;sn=8c9602c305026c55f412fe3d398cbf58&amp;scene=1&amp;srcid=0517bLlVIoPAwAkZCFi1BR1A&amp;key=f5c31ae61525f82e8f8b4b4037818cd1fbcfad3db884b839f9db2911f35ba6474789c618cf2568f3511b4ff2738f83a8&amp;ascene=0&amp;uin=NTU4ODc2MTM1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.5+build(14F27)&amp;version=11020113&amp;pass_ticket=on%2Bb6n1MZWqiq1BulIBHH%2BRfTMAKgMmGKVBVxGC2uUJ5MuYAIPxHLdBuevdSjgmZ">闲谈css那些事儿</a></p>
   </li>
 </ul>
-
-    </div>
-
-    <!-- Duoshuo Comment BEGIN -->
-<a name="comments"> </a>
-<div id="comment">
-    <div class="ds-thread" data-urt="http://fex.baidu.com/tech-note/2016/05/17/justify" data-title="text-align: justify" data-thread-key="/tech-note/2016/05/17/justify"></div>
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:"fex"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = 'http://static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-</div>
-<!-- Duoshuo Comment END -->
-
-</article>
-
-
-        </div>
-    </div>
-
-    <footer id="bottom">
-    <!-- <div class="content">
-        <p>A little better from Web Front End.
-</p>
-    </div> -->
-</footer>
-
-<script src="/scripts/zepto.min.js"></script>
-
-
-</body>
-
-</html>

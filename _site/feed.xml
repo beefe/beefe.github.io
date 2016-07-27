@@ -6,9 +6,462 @@
 </description>
     <link>http://beefe.github.io//</link>
     <atom:link href="http://beefe.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+
     <pubDate>Wed, 27 Jul 2016 10:33:01 +0800</pubDate>
     <lastBuildDate>Wed, 27 Jul 2016 10:33:01 +0800</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Q2 summary</title>
+        <description>&lt;!-- more --&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;自三月七日入职以来在公司度过了愉快而充实的四个月，现基于述职要求对 Q2 期间学习工作做简要总结
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;q2-time-line&quot;&gt;Q2 time line&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;以时间为线索，选取节点事件，对技术成长与经验思考进行简要总结，以下是要点简述与格式，之后是正文。
+
+1. 时间甄选： 考虑项目的可描述以及技术线索的清晰，以项目或任务开始时间为准
+2. 技术类型分为：
+    - 开发框架，如： fis-zoo, vue-cli, gulp ...
+    - 使用框架，如： React, Vue ...
+    - 样式相关，如： Sass, Less, CSS ...
+    - 脚本基础，如： js 语言特性，js 异步编程 ...
+    - 代码维护，如： git, annotation convnentioin ...
+    - 服务器端，如： Nodejs 基础, DB
+3. 经验思考： 对于开发过程与编程思想融汇总结
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;month-date-eventname&quot;&gt;month-date eventName&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 技术类型 1
+    num. 技术要点
+- 技术类型 2
+    ...
+- 经验思考
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;month-date-&quot;&gt;month-date 前端工程化&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 对于前端工程化的目标了解
+- 对于公司前端工程化工具的初步了解 -&amp;gt; fis-zoo
+- 对前端工程化与之前学习成果的融汇
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;vue-project-scaffolding&quot;&gt;04-01 Vue Project scaffolding&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- components data flow: vuex
+    1. file structure
+    2. name convention
+    3. flow cycle: `interaction user/ backend` -&amp;gt; `action` -&amp;gt; `mutation` -&amp;gt; `state` -&amp;gt; `getter` -&amp;gt; `component`
+
+- router: vue-router
+    1. route map
+    2. link and go
+    3. transition
+    4. data
+
+- style:
+    1. vue-transition configuration -&amp;gt; js hook or css name convention
+    2. style module developing in the project -&amp;gt; npm link
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;gift-page-for-fushikang&quot;&gt;04-15 gift page for fushikang&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- css: psuedo elements
+- css: border and background
+- css: text
+- css: meta, viewport
+- css: transform, translate, transition
+- dev: gulp and browsersync for quick style developement
+- photoshop cc image assets generator
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;vue-weui&quot;&gt;04-20 vue-weui&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- npm dependency management
+    - pros: dev, require
+    - cons: needs compile, and css needs transition (especially about the static resources)
+    - ?: imports of diffrent system of modules -&amp;gt; duoshuo, common, AMD, UMD, zepto
+    - flex layout
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;swipe&quot;&gt;04-30 swipe&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- different environment different import mode
+- the process of code flow
+- js dom coding and and transformation
+- hammer js tap and dom interaction
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;beefe-code-style&quot;&gt;05-01 beeFE code style&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- baidu
+- google
+- mdo, airbnb
+- md: MDN
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;fe-blog&quot;&gt;05-05 FE blog&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- framework JEKYll -&amp;gt; text transform engine
+- duoshuo as kind of component
+- a little about sass
+- liquid template
+- eslint configuration, rules, loader
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;wechat-node-server&quot;&gt;05-07 wechat node server&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- js test, mocha, assertion
+- gulp&#39;s compile configuration is really js, blob and file system
+- nodejs development guide -&amp;gt; hoisting, closure, OOP
+- wechat developer guide -&amp;gt; request, response and server -&amp;gt; http
+- domain analysis process
+- try to know DB -&amp;gt; SQL, MongoDB, Firebase
+- serious about es6, generator
+- more about shell 05.01
+- ejs template and the process of compiling template
+- route, log; more fundamental is the request and response -&amp;gt; through middlewawre
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;at-cell-at-tip&quot;&gt;05-17 at-cell, at-tip&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- markdown convention from MDN web developer examples
+- async code style, chain? genertator, Promise,
+- common component based on polymorphism
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;shengdeng-internal&quot;&gt;05-27 shengdeng internal&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- git workflow
+- master, pre-delploy, feature branch
+- use js RegExp
+- atData, lodash practical with static method, functional programming
+- note convention
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;参与项目介绍&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;前端代码规范&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;角色：在前端代码规范制定过程中我主要负责同行优秀代码规范的采集与初步阅读工作&lt;/li&gt;
+  &lt;li&gt;需求：通过代码规范的制定形成新同事融入团队的一项重要说明文档，团队开发过程中的格式规范。&lt;/li&gt;
+  &lt;li&gt;目标：统一编码风格，提高代码可阅读性，降低代码维护成本，方便工作交接与合作开发。以期达到一个团队的代码如同出自一人之手的效果。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://gitlab.i.beebank.com/beefe/code_style&quot;&gt;结果&lt;/a&gt;: 完成了基本的代码风格收集，主要包括百度，谷歌的开源规范，代码校验工具待对代码规范进一步讨论后进行 lint 配置文件编写&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;前端博客搭建&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;角色：coder and designer&lt;/li&gt;
+  &lt;li&gt;需求：搭建一个简易的前端博客&lt;/li&gt;
+  &lt;li&gt;价值：方便同学们进行技术积累与交流&lt;/li&gt;
+  &lt;li&gt;功能：文档分类，作者管理&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://beefe.github.io/&quot;&gt;BeeFE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;房贷内微&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;角色：需求分析，交互设计，组件开发与业务模块开发&lt;/li&gt;
+  &lt;li&gt;需求：构建一个能够实时存储，通过数据实时监听而变化收集信息内容的数据收集平台&lt;/li&gt;
+  &lt;li&gt;价值：
+    &lt;ol&gt;
+      &lt;li&gt;为下户员在下户调查后的数据录入提供一个操作方便的移动平台&lt;/li&gt;
+      &lt;li&gt;提供表单数据收集快速开发的套件 at-cell&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;功能：数据分布储存，数据双向绑定&lt;/li&gt;
+  &lt;li&gt;结果：虽然获得了数据双向绑定的便利，但整体并不尽如人意
+    &lt;ol&gt;
+      &lt;li&gt;由于能够对表单数据形成直接的绑定监听并通过行为的配置实现取得了一定的便利&lt;/li&gt;
+      &lt;li&gt;多样化的表单组件带来了交互上的便利，纷至沓来的也有数据形式的多样化&lt;/li&gt;
+      &lt;li&gt;由于字段量巨大，并且字段格式存在一定变数，故数据本身格式并不统一&lt;/li&gt;
+      &lt;li&gt;套件的数据机制虽然具备一定的可扩展性与可配置性，但由于需求有限并为对组件的数据合并与抽取进行足够细致的开发&lt;/li&gt;
+      &lt;li&gt;大量业务逻辑与组件数据模块耦合&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;收获与思考&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;前端工程师&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;对前端技术结构有了最基本的认知&lt;/li&gt;
+      &lt;li&gt;对前端开发的技术最终追求有了初步认识&lt;/li&gt;
+      &lt;li&gt;通过结合实践的机会使得对 style, js 的相关知识有了更深，更系统的认识。&lt;/li&gt;
+      &lt;li&gt;如何快速建立对不熟悉项目工程结构的认识&lt;/li&gt;
+      &lt;li&gt;在与前辈的交流工程中，逐步建立自己对工具的了解学习方式，对不同工具的优劣判断标准&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;公司业务&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;在房贷内微的开发过程中，对房压贷的下户调查过程有了基本认识&lt;/li&gt;
+      &lt;li&gt;通过参与房压贷的业务培训了解了公司房压贷业务的基本流程，以及各环节的操作概况&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;通过与房压贷开发过程中通过与同仁的交流形成了关于需求与开发之间关系的初步思考：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;排序需求，优化自身开发关键路径&lt;/li&gt;
+      &lt;li&gt;开发速度与开发质量&lt;/li&gt;
+      &lt;li&gt;如何保持代码的可维护性：技术与习惯&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;不足与埋坑&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;缺乏对学习成果的系统总结&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;内容上主要包括以下几个方面：lodash, DB, node server, webpack and vue&lt;/li&gt;
+      &lt;li&gt;成果形式的不足主要反映在，第一未能及时撰写前端博客文章，第二未能提供对应的 demo 仓库，以复现对应的开发环境&lt;/li&gt;
+      &lt;li&gt;未能在生产项目中及时使用学习成果，建立对应的 git 分支，以尝试响应的特性开发。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;未能取得很好的测试驱动开发实践&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;首先因为缺乏对项目需求的充分分析，因而对项目需求理解不够透彻，致使开发目标不明确&lt;/li&gt;
+      &lt;li&gt;对测试模块的编写不熟悉，同时缺少测试数据编写经验，因而一再拖延编写单元测试与测试数据&lt;/li&gt;
+      &lt;li&gt;由于缺乏测试，在代码编写完成后，总是需要手工测试是否完成预期，造成了自己与产品同学大量时间的浪费&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;组件开发过度依赖事件驱动，同时并未能整理相关流程文档，为将来的维护埋下了一定的隐患&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;大量依赖事件机制的一个必然结果就是代码执行位置的跳跃&lt;/li&gt;
+      &lt;li&gt;在房贷项目中虽然有的流程想对简单，但是牵扯到多个事件。而有的复杂事件将会牵扯到该函数作用域外的多个状态量，并涉及到多个监听元素。在 debug 过程中给问题得定位带来了不小的麻烦&lt;/li&gt;
+      &lt;li&gt;由于大量的执行过程基于事件驱动，而当某个执行过程牵涉到一步操作时，往往带来流程的困难。现在的代码中缺乏必要的异步流程管理机制，如 &lt;code class=&quot;highlighter-rouge&quot;&gt;Promise.all&lt;/code&gt; 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;Promise.race&lt;/code&gt; 等&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;改进与展望&lt;/h2&gt;
+
+&lt;p&gt;在之前的开发实践、学习过程中有不少收获，同时存在许多不足，为了在接下来的工作中更好的完成业务需求同时提高代码质量，特别设定了以下几个目标。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;test driven development:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;熟悉 mocha (test framework) 与 chai (assertion library), 掌握基于 js 基本的单元测试编写&lt;/li&gt;
+      &lt;li&gt;编写 at-cell 组件库的测试数据&lt;/li&gt;
+      &lt;li&gt;编写 atData 方法类的单元测试&lt;/li&gt;
+      &lt;li&gt;在三周内完成测试编写，以驱动借助 lodash 对 atData 的重构&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;整理项目开发日志完善项目代码注释，同时进行异步代码流程管理码重构。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;methods 作用标注&lt;/li&gt;
+      &lt;li&gt;对不同页面的功能的业务流程的事件流程梳理成文&lt;/li&gt;
+      &lt;li&gt;同步 at-cell 组件库的使用文档，补充 atData 的使用文档&lt;/li&gt;
+      &lt;li&gt;借由 Promise 对数据传输模块代码进行重构&lt;/li&gt;
+      &lt;li&gt;配合 at-tip 完成某些交互代码更新&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;lint 工具配置文件编写&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;结合前端代码 beeFE code style 编写 eslint, csslint 的规则配置文件&lt;/li&gt;
+      &lt;li&gt;研究 &lt;a href=&quot;http://fecs.baidu.com/&quot;&gt;FECS&lt;/a&gt; 及相关工具的可用性&lt;/li&gt;
+      &lt;li&gt;完成配置文件向 sublime 或者 编译阶段的集成&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;es6 特性在基础组件研发中的应用&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;开发方式的探究 fis-zoo 项目内部进行开发还是 webpack or rollup 进行模块独立开发&lt;/li&gt;
+      &lt;li&gt;新基础特性使用，主要包括对 es5 js 数据类型的方法扩展、解构赋值、箭头函数、class、Prmomise、Set and Map 等新数据结构&lt;/li&gt;
+      &lt;li&gt;向 zoo 开发者提供必要信息，以确保 js 文件的 sourcemap 齐备&lt;/li&gt;
+      &lt;li&gt;编写过程中通过 babel REPL 逐步熟悉 es6 =&amp;gt; es5 的编译过程&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;完成基于 node 的微信公众号教程库制作:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;微信认证基本配置&lt;/li&gt;
+      &lt;li&gt;jssdk 配置&lt;/li&gt;
+      &lt;li&gt;素材上传&lt;/li&gt;
+      &lt;li&gt;用户分组&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;完善 atomic component 样式开发&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;调整 weui 的 gulp 配置，形成自有的样式开发工具，留待解决的是 最终文件的 sourcemap&lt;/li&gt;
+      &lt;li&gt;实现一个调用方便的格网系统（基于 flex）&lt;/li&gt;
+      &lt;li&gt;配合 vue-transition css hook 编写初步的过渡效果库&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 04 Jul 2016 00:00:00 +0800</pubDate>
+        <link>http://beefe.github.io//tech-note/2016/07/04/q2summary.html</link>
+        <guid isPermaLink="true">http://beefe.github.io//tech-note/2016/07/04/q2summary.html</guid>
+        
+        <category>summary</category>
+        
+        <category>log</category>
+        
+        
+        <category>tech-note</category>
+        
+      </item>
+    
+      <item>
+        <title>Lodash introduction</title>
+        <description>&lt;p&gt;npm 上下载量最大的库，有着极佳的运行效率与非常优雅的接口设计，提供了很多 es6 之前未能提供的 util function. &lt;a href=&quot;https://lodash.com/docs#template&quot;&gt;lodash&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&quot;lodash-introduction&quot;&gt;lodash introduction&lt;/h1&gt;
+
+&lt;p&gt;运行快，在 js 本身能力有限的情况下提供了大量抽象层次更高的函数。&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;1.installation&lt;/h2&gt;
+
+&lt;p&gt;各种模块类型全面支持&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. 浏览器&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lodash.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;2. cmd&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm i --save lodash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Load the full build.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;lodash&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Load a method category.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;lodash/array&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;lodash/fp/object&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;basic-usage&quot;&gt;2.basic usage&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;b&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;c&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// ➜ { &#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3 }&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// ➜ [3, 6, 9]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;根据处理对象的不同，lodash 的方法被分为 &lt;code class=&quot;highlighter-rouge&quot;&gt;Array, Collection, Date, Function, Lang, Math, Number, Object, Seq, String, util, Properties, Methods&lt;/code&gt; 12 个模块。 其中 Properties 和 Methods 是对 template 方法的参数设置。&lt;/p&gt;
+
+&lt;h2 id=&quot;chain&quot;&gt;3.chain&lt;/h2&gt;
+
+&lt;p&gt;通过 Seq 模块内方法实现。&lt;/p&gt;
+
+&lt;p&gt;通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; 方法，将会创建一个 lodash 对象（可以类比 Jquery 对象理解），对于以数组、函数、组合作为操作对象并返回数组的方法就可以链式调用了。如果一个方法操作或是返回简单值，那么链式调用将被直接中断。同时需要注意的是，在链式调用过程中，操作的结果值是不会主动返回的，如果要返回过程中的值需要显式地调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;.value()&lt;/code&gt; 方法。当显式地调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;_.chain&lt;/code&gt; 方法时，值得返回必须使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;value()&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;链式调用在执行时，将会延迟到需要返回值时。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;interface-and-shorthand&quot;&gt;4.interface and shorthand&lt;/h2&gt;
+
+&lt;h2 id=&quot;recipes&quot;&gt;5.Recipes&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;过滤对象的多余属性&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sat, 25 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://beefe.github.io//tech-note/2016/06/25/lodash-introduction.html</link>
+        <guid isPermaLink="true">http://beefe.github.io//tech-note/2016/06/25/lodash-introduction.html</guid>
+        
+        <category>lodash</category>
+        
+        <category>util</category>
+        
+        <category>functional programming</category>
+        
+        
+        <category>tech-note</category>
+        
+      </item>
+    
+      <item>
+        <title>rnpm的使用研究</title>
+        <description>&lt;p&gt;在使用rnpm时，发现对于iOS工程部起作用，本文深刻分析了其中的原因，读完此文，你可以自己实现一个更好的rnpm。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+&lt;p&gt;​        在使用ReactNative 开发时，常常需要使用封装的Android 或者iOS控件，在使用时需要手动导入到工程项目中，很是麻烦，rnpm 可以自动链接库到项目工程中，但使用中发现，对于Android库的支持很完善，iOS库基本链接失败，需要手动链接才能成功，本篇文章分析了其中的原理，该文的最大价值在于解决此类问题的思路。&lt;/p&gt;
+
+&lt;p&gt;​	首先建立一个空白的ReactNative 工程，并使用git 跟踪其中的所有文件，因为配置的改变必然改变配置文件，但我们不知道究竟改变了哪些配置文件，以及这些配置文件的位置，都跟踪就是了，我选择了react-native-contacts 、react-native-permission-manager 、react-native-toast这三个组件，在实际使用中发现这三个控件一个完全能配置好，一个配置的乱七八糟的，还有一个什么也没配置，非常具有代表性。这个在package.json中配置以下，然后npm install ，这个时候执行以下git commit。&lt;/p&gt;
+
+&lt;p&gt;​	接下来，执行rnpm link ， git status 出现以下信息：然后提交以下&lt;img src=&quot;/img/2016-06-03-rnpm/1.jpg&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;​	发现这个project.pbxproj 是项目的配置文件，这个时候运行项目，仍然会报错。react-native-permission-manager 、react-native-toas 没有链接好。&lt;/p&gt;
+
+&lt;p&gt;​	手动更改好react-native-permission-manager 个库的配置，按照&lt;/p&gt;
+
+&lt;p&gt;http://reactnative.cn/docs/0.26/linking-libraries-ios.html#content 这里讲的就可以配置好，&lt;/p&gt;
+
+&lt;p&gt;然后再次执行git status , &lt;img src=&quot;/img/2016-06-03-rnpm/2.jpg&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;发现这个库的project.pbxproj改变了，经过进一步的查看，是文件中多了相应的信息HEADER_SEARCH_PATHS = (&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;				&quot;$(inherited)&quot;,
+				&quot;$(SRCROOT)/../../react-native/React/**&quot;, 至此，就搞明白了，rnpm 只是把库配置到全局，让项目感知到库的存在，但并没有配置库自身的依赖，这个第三方的库需要知道这个项目的react库的位置。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;但为什么react-native-contacts这个就可以配置好呢，还有一个配置的乱七八糟，原来是它们自身就带了这个配置了。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://beefe.github.io//tech-note/2016/06/03/rnpm.html</link>
+        <guid isPermaLink="true">http://beefe.github.io//tech-note/2016/06/03/rnpm.html</guid>
+        
+        <category>rnpm</category>
+        
+        
+        <category>tech-note</category>
+        
+      </item>
     
       <item>
         <title>React Native的Android Native定制开发</title>
@@ -446,7 +899,7 @@
     
       <item>
         <title>Android WebView相关的一些笔记</title>
-        <description>&lt;p&gt;当Android项目使用WebView去加载网页的时候，免不了要与JS进行一些交互，所以也就免不了会遇到的一些问题，
+        <description>&lt;p&gt;当Android项目使用WebView去加载网页的时候，很多时候要与JS进行一些交互，所以就会遇到的一些问题，
 比如alert在WebView中弹不出来，比如JS调用Native方法报错，假如你也恰好遇到了这些问题，不妨看下我的解决方法，
 也许正好能帮上你的忙。&lt;/p&gt;
 
@@ -461,8 +914,8 @@
 
 &lt;h5 id=&quot;section&quot;&gt;不增加的后果就是当用户点击一个跳转链接时，会调用系统浏览器从而跳出你的程序&lt;/h5&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shouldOverrideUrlLoading&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WebView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loadUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
@@ -475,19 +928,19 @@
 
 &lt;h5 id=&quot;jsjs----&quot;&gt;这个不用解释了吧，不打开JS支持怎么与JS交互呢 (- -#)&lt;/h5&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSettings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setJavaScriptEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSettings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setJavaScriptEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;webviewjsalert&quot;&gt;让WebView支持JS的alert&lt;/h3&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebChromeClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebChromeClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebChromeClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebChromeClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;为什么加上一个WebChromeClient就支持alert了呢？因为WebChromeClient里有这个方法&lt;/p&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onJsAlert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WebView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsResult&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onJsAlert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -496,12 +949,12 @@
 
 &lt;h3 id=&quot;jsnative&quot;&gt;给JS提供一个Native方法&lt;/h3&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addJavascriptInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSCallbackInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MyJSBridge&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addJavascriptInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSCallbackInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MyJSBridge&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JSCallbackInterface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nd&quot;&gt;@JavascriptInterface&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JSCallbackInterface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@JavascriptInterface&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     	&lt;span class=&quot;c1&quot;&gt;// native do something&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -511,8 +964,8 @@
 
 &lt;h5 id=&quot;jsnative-1&quot;&gt;JS调用Native方法可以这样调用&lt;/h5&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MyJSBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-	&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MyJSBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MyJSBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MyJSBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -521,7 +974,7 @@
 
 &lt;h3 id=&quot;jsnativenpobject-deleted&quot;&gt;当JS调用Native方法报”NPObject deleted”错误时，解决方案如下&lt;/h3&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onPageFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WebView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onPageFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
@@ -531,14 +984,13 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;“NPObject deleted”错误，根据字面来理解应该是Native Object被删除了，这种情况出现在Web页面点击一个链接跳转后调用Android Native方法出现，
-每次Web页面跳转都会调用”onPageStarted”和”onPageFinished”方法，我们只需在”onPageFinished”方法中再次把Android Native Object添加即可&lt;/p&gt;
+&lt;p&gt;“NPObject deleted”错误，根据字面来理解应该是Native Object被删除了，这种情况出现在Web页面点击一个链接跳转后调用Android Native方法出现，每次Web页面跳转都会调用”onPageStarted”和”onPageFinished”方法，我们只需在”onPageFinished”方法中再次把Android Native Object添加即可&lt;/p&gt;
 
 &lt;h3 id=&quot;jshttps&quot;&gt;让JS支持https&lt;/h3&gt;
 
 &lt;h5 id=&quot;webviewwebhttps--&quot;&gt;WebView加载一些Web页加载不出来，比如支付宝的支付网页，因为是https (≧﹏ ≦)&lt;/h5&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onReceivedSslError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WebView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SslErrorHandler&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SslError&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;proceed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
@@ -549,7 +1001,7 @@
 
 &lt;h2 id=&quot;section-1&quot;&gt;好了，我们把上面的代码整理下&lt;/h2&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setWebView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loadUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
@@ -557,6 +1009,8 @@
     &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSettings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setJavaScriptEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addJavascriptInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSCallbackInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MyJSBridge&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebChromeClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebChromeClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     
@@ -582,7 +1036,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JSCallbackInterface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nd&quot;&gt;@JavascriptInterface&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -615,7 +1069,7 @@
 
 &lt;p&gt;&lt;strong&gt;1. 题目实现&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTML:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTML:
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;num&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;num&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
@@ -677,7 +1131,7 @@ CSS:
 
 &lt;p&gt;&lt;strong&gt;2. 表单文字两端对齐&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTML:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTML:
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;姓名&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     ...
 
@@ -736,7 +1190,7 @@ CSS:
 
 &lt;h2 id=&quot;installation-and-quik-start&quot;&gt;Installation and Quik-start&lt;/h2&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll
 ~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new myblog
 ~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;myblog
 ~/myblog &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve
@@ -915,7 +1369,7 @@ tag: Jekyll
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- TAG --&amp;gt;&lt;/span&gt;
 {% if user.name == &#39;elvis&#39; %}
   Hey Elvis

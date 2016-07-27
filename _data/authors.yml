@@ -9,7 +9,7 @@ xwenliang:
   intro: Boss
 
 xszhi:
-  name: skinTest
+  name: 薛淞之
   url: http://skintest.github.io/
   intro: calm down
 
@@ -22,3 +22,8 @@ shexiaoheng:
   name: shexiaoheng
   url: https://github.com/shexiaoheng
   intro: candor boy
+
+aihaitao:
+  name: aihaitao
+  url: https://github.com/voidException
+  intro: no more

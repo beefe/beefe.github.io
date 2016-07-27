@@ -6,7 +6,7 @@ categories: tech_note
 tag: Android
 ---
 
-当Android项目使用WebView去加载网页的时候，免不了要与JS进行一些交互，所以也就免不了会遇到的一些问题，
+当Android项目使用WebView去加载网页的时候，很多时候要与JS进行一些交互，所以就会遇到的一些问题，
 比如alert在WebView中弹不出来，比如JS调用Native方法报错，假如你也恰好遇到了这些问题，不妨看下我的解决方法，
 也许正好能帮上你的忙。
 
@@ -25,7 +25,7 @@ webView.loadUrl(url);
 
 ```java
 webView.setWebViewClient(new WebViewClient() {
-	@Override
+    @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         view.loadUrl(url);
         return true;
@@ -64,7 +64,7 @@ webView.addJavascriptInterface(new JSCallbackInterface(), "MyJSBridge");
 
 ```java
 private class JSCallbackInterface {
-	@JavascriptInterface
+    @JavascriptInterface
     public void myMethod() {
     	// native do something
     }
@@ -75,7 +75,7 @@ private class JSCallbackInterface {
 
 ```javascript
 if(window.MyJSBridge){
-	window.MyJSBridge.myMethod();
+    window.MyJSBridge.myMethod();
 }
 ```
 
@@ -94,8 +94,7 @@ webView.setWebViewClient(new WebViewClient() {
 });
 ```
 
-"NPObject deleted"错误，根据字面来理解应该是Native Object被删除了，这种情况出现在Web页面点击一个链接跳转后调用Android Native方法出现，
-每次Web页面跳转都会调用"onPageStarted"和"onPageFinished"方法，我们只需在"onPageFinished"方法中再次把Android Native Object添加即可
+"NPObject deleted"错误，根据字面来理解应该是Native Object被删除了，这种情况出现在Web页面点击一个链接跳转后调用Android Native方法出现，每次Web页面跳转都会调用"onPageStarted"和"onPageFinished"方法，我们只需在"onPageFinished"方法中再次把Android Native Object添加即可
 
 
 ### 让JS支持https
@@ -122,6 +121,8 @@ private void setWebView(String url){
     webView.getSettings().setJavaScriptEnabled(true);
 
     webView.addJavascriptInterface(new JSCallbackInterface(), "MyJSBridge");
+    
+    webView.setWebChromeClient(new WebChromeClient());
 
     webView.setWebViewClient(new WebViewClient() {
     
