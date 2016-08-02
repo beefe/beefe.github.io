@@ -354,51 +354,46 @@ public class PackageName implements ReactPackage{   // 根据开发的功能来�
 ### 创建index.js
 
 ```javascript
-var React = require('react-native');
+import React,{
+    Component,
+    PropTypes,
+    View
+} from 'react';
 
-var { NativeModules,requireNativeComponent,PropTypes,View} = React;
+import ReactNative,{
+    requireNativeComponent,
+    NativeModules
+} from 'react-native';
 
-var UIManager = NativeModules.UIManager;
+let UIManager = NativeModules.UIManager;
 
-class YouView extends React.Component {
-    constructor(props) {
-        super(props);
-        this._onChange = this._onChange.bind(this);
-    }
-    _onChange(event: Event) {
-        if (!this.props.onChangeMessage) {
-            return;
-        }
-        this.props.onChangeMessage(event.nativeEvent.message);
-    }
-    methodOne: function(){          
+let NativeYouView = requireNativeComponent('RCTViewName',YouView);
+
+
+export default class YouView extends React.Component{
+    static propTypes = {
+        isLoop: PropTypes.bool,
+    };
+    methodOne() {
         UIManager.dispatchViewManagerCommand(
-            React.findNodeHandle(this.refs.youview),
+            ReactNative.findNodeHandle(this),
             UIManager.RCTViewName.Commands.methodOne,       // 调用定义在ViewManager里的methodOne
             null,
         );
-    }
-    methodTwo: function(){         
+    };
+
+    methodTwo(){
         UIManager.dispatchViewManagerCommand(
-            React.findNodeHandle(this.refs.youview),
+            ReactNative.findNodeHandle(this),
             UIManager.RCTViewName.Commands.methodTwo,       // 调用定义在ViewManager里的methodTwo
             null,
         );
     }
-    render() {
-        return <RCTYouView {...this.props} onChange={this._onChange} />;
+
+    render(){
+        return <NativeYouView {...this.props} />;
     }
-}
-YouView.propTypes = {
-  onChangeMessage: React.PropTypes.func,
-  isLoop: PropTypes.bool,   // 设置@ReactProp定义的属性
 };
-
-var RCTYouView = requireNativeComponent(`RCTViewName`, YouView, {
-  nativeOnly: {onChange: true}
-});
-
-module.exports = YouView;
 ```
 
 ### 创建package.json
